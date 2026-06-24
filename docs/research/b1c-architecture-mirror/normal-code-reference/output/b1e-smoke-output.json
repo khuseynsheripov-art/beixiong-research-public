@@ -1,0 +1,1072 @@
+{
+  "referenceProject": "B1E normal-code-reference",
+  "noExternalCalls": true,
+  "counts": {
+    "templateFields": 11,
+    "attributeGapFields": 4,
+    "normalizedRows": 2,
+    "draftCandidates": 2,
+    "generatedAssetRefs": 2,
+    "importPreviewCandidates": 2,
+    "preflightIssues": 4,
+    "uploadIntentIssues": 5
+  },
+  "templateMeta": {
+    "categoryInfo": {
+      "descriptionCategoryId": 17028922,
+      "typeId": 97031654,
+      "categoryTitle": "B1E Demo Fixture Category",
+      "searchTerms": [
+        "steel organizer",
+        "storage rack"
+      ],
+      "titleHints": [
+        "compact steel organizer"
+      ],
+      "tagHints": [
+        "home storage",
+        "steel"
+      ]
+    },
+    "categoryTitle": "B1E Demo Fixture Category",
+    "editorOrder": [
+      "Price, CNY",
+      "Old price, CNY",
+      "Weight, g",
+      "Package width, mm",
+      "Package height, mm",
+      "Package length, mm",
+      "Name",
+      "Color",
+      "Battery included",
+      "Material",
+      "Brand"
+    ],
+    "fieldMeta": {
+      "Price, CNY": {
+        "key": "price",
+        "editorLabel": "Price, CNY",
+        "header": "Price, CNY",
+        "required": true,
+        "editable": true,
+        "isAutoManaged": true,
+        "valueKind": "numeric",
+        "isCollection": false,
+        "options": [],
+        "_optionIds": {},
+        "_ozonAttributeId": 0,
+        "_dictionaryId": 0,
+        "_systemFieldType": "price",
+        "_isNameField": false,
+        "evidence": "B1C/B1D uploader-payload system field defaults"
+      },
+      "Old price, CNY": {
+        "key": "old_price",
+        "editorLabel": "Old price, CNY",
+        "header": "Old price, CNY",
+        "required": false,
+        "editable": true,
+        "isAutoManaged": true,
+        "valueKind": "numeric",
+        "isCollection": false,
+        "options": [],
+        "_optionIds": {},
+        "_ozonAttributeId": 0,
+        "_dictionaryId": 0,
+        "_systemFieldType": "old_price",
+        "_isNameField": false,
+        "evidence": "B1C/B1D uploader-payload system field defaults"
+      },
+      "Weight, g": {
+        "key": "weight_g",
+        "editorLabel": "Weight, g",
+        "header": "Weight, g",
+        "required": true,
+        "editable": true,
+        "isAutoManaged": true,
+        "valueKind": "numeric",
+        "isCollection": false,
+        "options": [],
+        "_optionIds": {},
+        "_ozonAttributeId": 0,
+        "_dictionaryId": 0,
+        "_systemFieldType": "weight_g",
+        "_isNameField": false,
+        "evidence": "B1C/B1D uploader-payload system field defaults"
+      },
+      "Package width, mm": {
+        "key": "width_mm",
+        "editorLabel": "Package width, mm",
+        "header": "Package width, mm",
+        "required": true,
+        "editable": true,
+        "isAutoManaged": true,
+        "valueKind": "numeric",
+        "isCollection": false,
+        "options": [],
+        "_optionIds": {},
+        "_ozonAttributeId": 0,
+        "_dictionaryId": 0,
+        "_systemFieldType": "width_mm",
+        "_isNameField": false,
+        "evidence": "B1C/B1D uploader-payload system field defaults"
+      },
+      "Package height, mm": {
+        "key": "height_mm",
+        "editorLabel": "Package height, mm",
+        "header": "Package height, mm",
+        "required": true,
+        "editable": true,
+        "isAutoManaged": true,
+        "valueKind": "numeric",
+        "isCollection": false,
+        "options": [],
+        "_optionIds": {},
+        "_ozonAttributeId": 0,
+        "_dictionaryId": 0,
+        "_systemFieldType": "height_mm",
+        "_isNameField": false,
+        "evidence": "B1C/B1D uploader-payload system field defaults"
+      },
+      "Package length, mm": {
+        "key": "depth_mm",
+        "editorLabel": "Package length, mm",
+        "header": "Package length, mm",
+        "required": true,
+        "editable": true,
+        "isAutoManaged": true,
+        "valueKind": "numeric",
+        "isCollection": false,
+        "options": [],
+        "_optionIds": {},
+        "_ozonAttributeId": 0,
+        "_dictionaryId": 0,
+        "_systemFieldType": "depth_mm",
+        "_isNameField": false,
+        "evidence": "B1C/B1D uploader-payload system field defaults"
+      },
+      "Name": {
+        "key": "Name",
+        "editorLabel": "Name",
+        "header": "Name",
+        "description": "Product title shown to Ozon buyers",
+        "groupName": "",
+        "required": true,
+        "editable": true,
+        "isAutoManaged": false,
+        "manualOnly": false,
+        "userManaged": false,
+        "valueKind": "text",
+        "isCollection": false,
+        "options": [],
+        "_optionIds": {},
+        "_ozonAttributeId": 4180,
+        "_dictionaryId": 0,
+        "_complexId": 0,
+        "_systemFieldType": "name",
+        "_isNameField": true,
+        "_freeTextDictionaryValue": false,
+        "evidence": "B1C category-builder.js + B1D fixture trace"
+      },
+      "Color": {
+        "key": "Color",
+        "editorLabel": "Color",
+        "header": "Color",
+        "description": "Visible product color",
+        "groupName": "",
+        "required": true,
+        "editable": true,
+        "isAutoManaged": false,
+        "manualOnly": false,
+        "userManaged": false,
+        "valueKind": "select",
+        "isCollection": true,
+        "options": [
+          {
+            "v": "Black",
+            "i": 201
+          },
+          {
+            "v": "White",
+            "i": 202
+          }
+        ],
+        "_optionIds": {
+          "Black": 201,
+          "White": 202
+        },
+        "_ozonAttributeId": 10096,
+        "_dictionaryId": 1002,
+        "_complexId": 0,
+        "_systemFieldType": "",
+        "_isNameField": false,
+        "_freeTextDictionaryValue": false,
+        "evidence": "B1C category-builder.js + B1D fixture trace"
+      },
+      "Battery included": {
+        "key": "Battery included",
+        "editorLabel": "Battery included",
+        "header": "Battery included",
+        "description": "Manual safety check field",
+        "groupName": "",
+        "required": false,
+        "editable": true,
+        "isAutoManaged": false,
+        "manualOnly": false,
+        "userManaged": false,
+        "valueKind": "select",
+        "isCollection": false,
+        "options": [
+          {
+            "v": "No",
+            "i": 301
+          },
+          {
+            "v": "Yes",
+            "i": 302
+          }
+        ],
+        "_optionIds": {
+          "No": 301,
+          "Yes": 302
+        },
+        "_ozonAttributeId": 777001,
+        "_dictionaryId": 0,
+        "_complexId": 0,
+        "_systemFieldType": "",
+        "_isNameField": false,
+        "_freeTextDictionaryValue": false,
+        "evidence": "B1C category-builder.js + B1D fixture trace"
+      },
+      "Material": {
+        "key": "Material",
+        "editorLabel": "Material",
+        "header": "Material",
+        "description": "Main material",
+        "groupName": "",
+        "required": false,
+        "editable": true,
+        "isAutoManaged": false,
+        "manualOnly": false,
+        "userManaged": false,
+        "valueKind": "text",
+        "isCollection": false,
+        "options": [],
+        "_optionIds": {},
+        "_ozonAttributeId": 9024,
+        "_dictionaryId": 0,
+        "_complexId": 0,
+        "_systemFieldType": "",
+        "_isNameField": false,
+        "_freeTextDictionaryValue": false,
+        "evidence": "B1C category-builder.js + B1D fixture trace"
+      },
+      "Brand": {
+        "key": "Brand",
+        "editorLabel": "Brand",
+        "header": "Brand",
+        "description": "Brand value",
+        "groupName": "",
+        "required": true,
+        "editable": true,
+        "isAutoManaged": true,
+        "manualOnly": false,
+        "userManaged": false,
+        "valueKind": "select",
+        "isCollection": false,
+        "options": [],
+        "_optionIds": {},
+        "_ozonAttributeId": 85,
+        "_dictionaryId": 1001,
+        "_complexId": 0,
+        "_systemFieldType": "brand",
+        "_isNameField": false,
+        "_freeTextDictionaryValue": true,
+        "evidence": "B1C category-builder.js + B1D fixture trace"
+      }
+    },
+    "dictionaryAttributeIds": [
+      10096,
+      85
+    ]
+  },
+  "gapMatrix": {
+    "contract": "AttributeGapMatrixCandidate",
+    "category": {
+      "descriptionCategoryId": 17028922,
+      "typeId": 97031654,
+      "categoryTitle": "B1E Demo Fixture Category",
+      "searchTerms": [
+        "steel organizer",
+        "storage rack"
+      ],
+      "titleHints": [
+        "compact steel organizer"
+      ],
+      "tagHints": [
+        "home storage",
+        "steel"
+      ]
+    },
+    "searchTerms": [
+      "steel organizer",
+      "storage rack"
+    ],
+    "titleHints": [
+      "compact steel organizer"
+    ],
+    "tagHints": [
+      "home storage",
+      "steel"
+    ],
+    "fields": [
+      {
+        "key": "Name",
+        "required": true,
+        "kind": "text",
+        "isCollection": false,
+        "optionCount": 0,
+        "systemFieldType": "name",
+        "owner": "ai-fill",
+        "evidence": "B1C category-builder.js + B1D fixture trace"
+      },
+      {
+        "key": "Color",
+        "required": true,
+        "kind": "select",
+        "isCollection": true,
+        "optionCount": 2,
+        "systemFieldType": "",
+        "owner": "ai-fill",
+        "evidence": "B1C category-builder.js + B1D fixture trace"
+      },
+      {
+        "key": "Battery included",
+        "required": false,
+        "kind": "select",
+        "isCollection": false,
+        "optionCount": 2,
+        "systemFieldType": "",
+        "owner": "ai-fill",
+        "evidence": "B1C category-builder.js + B1D fixture trace"
+      },
+      {
+        "key": "Material",
+        "required": false,
+        "kind": "text",
+        "isCollection": false,
+        "optionCount": 0,
+        "systemFieldType": "",
+        "owner": "ai-fill",
+        "evidence": "B1C category-builder.js + B1D fixture trace"
+      }
+    ],
+    "requiredMissingStrategy": "block_or_regenerate_before_upload_preview"
+  },
+  "aiSchema": {
+    "categoryTitle": "B1E Demo Fixture Category",
+    "fields": [
+      {
+        "k": "Name",
+        "t": "text",
+        "r": 1,
+        "m": 0,
+        "p": "name",
+        "owner": "ai-fill"
+      },
+      {
+        "k": "Color",
+        "t": "select",
+        "r": 1,
+        "m": 1,
+        "owner": "ai-fill"
+      },
+      {
+        "k": "Battery included",
+        "t": "select",
+        "r": 0,
+        "m": 0,
+        "owner": "ai-fill"
+      },
+      {
+        "k": "Material",
+        "t": "text",
+        "r": 0,
+        "m": 0,
+        "owner": "ai-fill"
+      }
+    ]
+  },
+  "schemaPayloads": {
+    "structuralPayload": {
+      "categoryTitle": "B1E Demo Fixture Category",
+      "fields": []
+    },
+    "multiSelectPayload": {
+      "categoryTitle": "B1E Demo Fixture Category",
+      "fields": [
+        {
+          "k": "Color",
+          "t": "select",
+          "r": 1,
+          "m": 1,
+          "owner": "ai-fill"
+        }
+      ]
+    },
+    "plainTextPayload": {
+      "categoryTitle": "B1E Demo Fixture Category",
+      "fields": [
+        {
+          "k": "Name",
+          "t": "text",
+          "r": 1,
+          "m": 0,
+          "p": "name",
+          "owner": "ai-fill"
+        },
+        {
+          "k": "Battery included",
+          "t": "select",
+          "r": 0,
+          "m": 0,
+          "owner": "ai-fill"
+        },
+        {
+          "k": "Material",
+          "t": "text",
+          "r": 0,
+          "m": 0,
+          "owner": "ai-fill"
+        }
+      ]
+    },
+    "descriptionPayload": {
+      "categoryTitle": "B1E Demo Fixture Category",
+      "fields": []
+    },
+    "tagsPayload": {
+      "categoryTitle": "B1E Demo Fixture Category",
+      "fields": []
+    }
+  },
+  "normalizedRows": [
+    {
+      "Name": "Steel organizer BrandX black",
+      "Color": [
+        "Black"
+      ],
+      "Material": "steel",
+      "Battery included": "No"
+    },
+    {
+      "Name": "Steel organizer BrandX blue",
+      "Material": "steel"
+    }
+  ],
+  "validationStats": {
+    "exactKeyMatches": 7,
+    "fuzzyKeyMatches": 0,
+    "unknownKeys": 1,
+    "unknownKeySamples": [
+      "UnexpectedField"
+    ],
+    "invalidSelectValues": 1,
+    "numericCoercions": 0
+  },
+  "validationStatsText": "exact=7, fuzzy=0, unknown=1, invalidSelect=1",
+  "drafts": [
+    {
+      "draftId": "B1E-REF-1",
+      "offerId": "B1E-REF-1",
+      "sourceSkuKey": "black",
+      "formGroupId": "shape-steel-organizer",
+      "fields": {
+        "Name": "Steel organizer BrandX black",
+        "Color": [
+          "Black"
+        ],
+        "Material": "steel",
+        "Battery included": "No",
+        "Price, CNY": 1290,
+        "Old price, CNY": 1590,
+        "Weight, g": 640,
+        "Package width, mm": 220,
+        "Package height, mm": 60,
+        "Package length, mm": 330
+      },
+      "media": {
+        "mainImage": "https://fixture.invalid/reference/canvas-main.jpg",
+        "gallery": [
+          "https://fixture.invalid/reference/canvas-detail.jpg"
+        ],
+        "colorImage": "https://fixture.invalid/reference/canvas-color.jpg",
+        "video": "https://fixture.invalid/reference/canvas-video.mp4",
+        "editableSuiteId": "fixture-suite-1"
+      },
+      "selectionSignals": {
+        "selection": {
+          "score": null,
+          "reserved": true
+        },
+        "profit": {
+          "grossMargin": null,
+          "reserved": true
+        },
+        "future3d": {
+          "cluster": null,
+          "reserved": true
+        }
+      }
+    },
+    {
+      "draftId": "B1E-REF-2",
+      "offerId": "B1E-REF-2",
+      "sourceSkuKey": "blue",
+      "formGroupId": "shape-steel-organizer",
+      "fields": {
+        "Name": "Steel organizer BrandX blue",
+        "Material": "steel",
+        "Price, CNY": 1290,
+        "Old price, CNY": 1590,
+        "Weight, g": "",
+        "Package width, mm": 220,
+        "Package height, mm": 60,
+        "Package length, mm": 330
+      },
+      "media": {
+        "mainImage": "https://fixture.invalid/reference/canvas-main.jpg",
+        "gallery": [
+          "https://fixture.invalid/reference/canvas-detail.jpg"
+        ],
+        "colorImage": "https://fixture.invalid/reference/canvas-color.jpg",
+        "video": "https://fixture.invalid/reference/canvas-video.mp4",
+        "editableSuiteId": "fixture-suite-1"
+      },
+      "selectionSignals": {
+        "selection": {
+          "score": null,
+          "reserved": true
+        },
+        "profit": {
+          "grossMargin": null,
+          "reserved": true
+        },
+        "future3d": {
+          "cluster": null,
+          "reserved": true
+        }
+      }
+    }
+  ],
+  "promptPlan": {
+    "schemaVersion": "2.0-reference",
+    "contract": "CanvasMediaPromptPlanCandidate",
+    "productContext": {
+      "title": "Steel organizer source item",
+      "sourceUrl": "https://fixture.invalid/source/steel-organizer",
+      "supplier": {
+        "name": "Fixture Supplier",
+        "platform": "fixture"
+      },
+      "skuFacts": [
+        {
+          "skuKey": "black",
+          "color": "Black",
+          "priceCny": 1290,
+          "oldPriceCny": 1590,
+          "weightG": 640
+        },
+        {
+          "skuKey": "blue",
+          "color": "Blue",
+          "priceCny": 1290,
+          "oldPriceCny": 1590,
+          "weightG": ""
+        }
+      ],
+      "category": {
+        "descriptionCategoryId": 17028922,
+        "typeId": 97031654,
+        "categoryTitle": "B1E Demo Fixture Category"
+      },
+      "searchTerms": [
+        "steel organizer",
+        "storage rack"
+      ],
+      "formGroup": {
+        "groupId": "shape-steel-organizer",
+        "strategy": "erp_shape_group_preselected",
+        "skuKeys": [
+          "black",
+          "blue"
+        ],
+        "decisions": [
+          {
+            "reason": "B1E reserves FormGroup input to reduce manual SKU grouping friction"
+          }
+        ]
+      },
+      "mustNotInvent": [
+        "certification",
+        "brand authorization",
+        "performance claims",
+        "contact info"
+      ]
+    },
+    "requestedSlots": [
+      {
+        "slot": "main_image",
+        "aspectRatio": "3:4",
+        "referenceImages": [
+          "https://fixture.invalid/reference/canvas-main.jpg"
+        ]
+      },
+      {
+        "slot": "gallery",
+        "aspectRatio": "3:4",
+        "referenceImages": [
+          "https://fixture.invalid/reference/canvas-detail.jpg"
+        ]
+      },
+      {
+        "slot": "color_image",
+        "aspectRatio": "1:1",
+        "referenceImages": [
+          "https://fixture.invalid/reference/canvas-color.jpg"
+        ]
+      }
+    ],
+    "rules": [
+      "preserve product structure, color, and material",
+      "do not add logo, watermark, promotion text, contact info, certification, or warranty claims",
+      "keep source evidence linked to generated media refs"
+    ]
+  },
+  "generatedAssetRefs": [
+    {
+      "contract": "ProductWorkbenchMediaRef",
+      "sourceType": "ai_generated",
+      "draftId": "B1E-REF-1",
+      "slot": "main_image",
+      "url": "https://fixture.invalid/reference/canvas-main.jpg",
+      "prompt": "fixture prompt only; no provider call",
+      "providerTaskId": null,
+      "sourceImages": [
+        "https://fixture.invalid/reference/sku-main.jpg",
+        "https://fixture.invalid/reference/sku-detail.jpg"
+      ],
+      "editableSuiteId": "fixture-suite-1",
+      "provenance": {
+        "evidence": "B1C generated-image-assets.js / B1D media placeholder trace",
+        "noProviderCallInSmoke": true
+      }
+    },
+    {
+      "contract": "ProductWorkbenchMediaRef",
+      "sourceType": "ai_generated",
+      "draftId": "B1E-REF-2",
+      "slot": "main_image",
+      "url": "https://fixture.invalid/reference/canvas-main.jpg",
+      "prompt": "fixture prompt only; no provider call",
+      "providerTaskId": null,
+      "sourceImages": [
+        "https://fixture.invalid/reference/sku-main.jpg",
+        "https://fixture.invalid/reference/sku-detail.jpg"
+      ],
+      "editableSuiteId": "fixture-suite-1",
+      "provenance": {
+        "evidence": "B1C generated-image-assets.js / B1D media placeholder trace",
+        "noProviderCallInSmoke": true
+      }
+    }
+  ],
+  "importPreviews": [
+    {
+      "contract": "OzonImportItemPreviewCandidate",
+      "draftId": "B1E-REF-1",
+      "item": {
+        "description_category_id": 17028922,
+        "type_id": 97031654,
+        "name": "Steel organizer BrandX black",
+        "offer_id": "B1E-REF-1",
+        "barcode": "",
+        "price": "1290",
+        "old_price": "1590",
+        "premium_price": "0",
+        "vat": "0",
+        "count": 0,
+        "weight": 640,
+        "weight_unit": "g",
+        "depth": 330,
+        "width": 220,
+        "height": 60,
+        "dimension_unit": "mm",
+        "attributes": [
+          {
+            "id": 4180,
+            "complex_id": 0,
+            "values": [
+              {
+                "value": "Steel organizer BrandX black"
+              }
+            ]
+          },
+          {
+            "id": 10096,
+            "complex_id": 0,
+            "values": [
+              {
+                "dictionary_value_id": 201,
+                "value": "Black"
+              }
+            ]
+          },
+          {
+            "id": 777001,
+            "complex_id": 0,
+            "values": [
+              {
+                "dictionary_value_id": 301,
+                "value": "No"
+              }
+            ]
+          },
+          {
+            "id": 9024,
+            "complex_id": 0,
+            "values": [
+              {
+                "value": "steel"
+              }
+            ]
+          }
+        ],
+        "complex_attributes": [],
+        "images": [
+          "https://fixture.invalid/reference/canvas-main.jpg",
+          "https://fixture.invalid/reference/canvas-detail.jpg"
+        ],
+        "color_image": "https://fixture.invalid/reference/canvas-color.jpg",
+        "video": "https://fixture.invalid/reference/canvas-video.mp4",
+        "images360": []
+      }
+    },
+    {
+      "contract": "OzonImportItemPreviewCandidate",
+      "draftId": "B1E-REF-2",
+      "item": {
+        "description_category_id": 17028922,
+        "type_id": 97031654,
+        "name": "Steel organizer BrandX blue",
+        "offer_id": "B1E-REF-2",
+        "barcode": "",
+        "price": "1290",
+        "old_price": "1590",
+        "premium_price": "0",
+        "vat": "0",
+        "count": 0,
+        "weight": 500,
+        "weight_unit": "g",
+        "depth": 330,
+        "width": 220,
+        "height": 60,
+        "dimension_unit": "mm",
+        "attributes": [
+          {
+            "id": 4180,
+            "complex_id": 0,
+            "values": [
+              {
+                "value": "Steel organizer BrandX blue"
+              }
+            ]
+          },
+          {
+            "id": 9024,
+            "complex_id": 0,
+            "values": [
+              {
+                "value": "steel"
+              }
+            ]
+          }
+        ],
+        "complex_attributes": [],
+        "images": [
+          "https://fixture.invalid/reference/canvas-main.jpg",
+          "https://fixture.invalid/reference/canvas-detail.jpg"
+        ],
+        "color_image": "https://fixture.invalid/reference/canvas-color.jpg",
+        "video": "https://fixture.invalid/reference/canvas-video.mp4",
+        "images360": []
+      }
+    }
+  ],
+  "preflightIssues": [
+    {
+      "code": "schema_unknown_key",
+      "severity": "review",
+      "message": "AI row key is outside schema: UnexpectedField",
+      "owner": "listing-prep",
+      "evidence": {
+        "rowIndex": 0,
+        "key": "UnexpectedField"
+      },
+      "draftId": null
+    },
+    {
+      "code": "invalid_select_value",
+      "severity": "block_or_regenerate",
+      "message": "Invalid option removed for Color",
+      "owner": "listing-prep",
+      "evidence": {
+        "rowIndex": 1,
+        "input": [
+          "Blue"
+        ],
+        "valid": [
+          {
+            "v": "Black",
+            "i": 201
+          },
+          {
+            "v": "White",
+            "i": 202
+          }
+        ]
+      },
+      "draftId": null
+    },
+    {
+      "code": "required_draft_field_missing",
+      "severity": "block",
+      "message": "Required draft field is empty: Color",
+      "owner": "listing-prep",
+      "evidence": {
+        "field": "Color"
+      },
+      "draftId": "B1E-REF-2"
+    },
+    {
+      "code": "empty_attribute_values",
+      "severity": "block",
+      "message": "Required Ozon attribute has no value: Color",
+      "owner": "listing-prep",
+      "evidence": {
+        "attributeId": 10096,
+        "label": "Color"
+      },
+      "draftId": "B1E-REF-2"
+    }
+  ],
+  "uploadIntent": {
+    "contract": "UploadIntentCandidate",
+    "readyForLiveWrite": false,
+    "noExternalCalls": true,
+    "importPreviewCount": 2,
+    "requestDescriptor": {
+      "surface": "productImport",
+      "method": "POST",
+      "path": "/v3/product/import",
+      "write": true,
+      "body": {
+        "items": [
+          {
+            "description_category_id": 17028922,
+            "type_id": 97031654,
+            "name": "Steel organizer BrandX black",
+            "offer_id": "B1E-REF-1",
+            "barcode": "",
+            "price": "1290",
+            "old_price": "1590",
+            "premium_price": "0",
+            "vat": "0",
+            "count": 0,
+            "weight": 640,
+            "weight_unit": "g",
+            "depth": 330,
+            "width": 220,
+            "height": 60,
+            "dimension_unit": "mm",
+            "attributes": [
+              {
+                "id": 4180,
+                "complex_id": 0,
+                "values": [
+                  {
+                    "value": "Steel organizer BrandX black"
+                  }
+                ]
+              },
+              {
+                "id": 10096,
+                "complex_id": 0,
+                "values": [
+                  {
+                    "dictionary_value_id": 201,
+                    "value": "Black"
+                  }
+                ]
+              },
+              {
+                "id": 777001,
+                "complex_id": 0,
+                "values": [
+                  {
+                    "dictionary_value_id": 301,
+                    "value": "No"
+                  }
+                ]
+              },
+              {
+                "id": 9024,
+                "complex_id": 0,
+                "values": [
+                  {
+                    "value": "steel"
+                  }
+                ]
+              }
+            ],
+            "complex_attributes": [],
+            "images": [
+              "https://fixture.invalid/reference/canvas-main.jpg",
+              "https://fixture.invalid/reference/canvas-detail.jpg"
+            ],
+            "color_image": "https://fixture.invalid/reference/canvas-color.jpg",
+            "video": "https://fixture.invalid/reference/canvas-video.mp4",
+            "images360": []
+          },
+          {
+            "description_category_id": 17028922,
+            "type_id": 97031654,
+            "name": "Steel organizer BrandX blue",
+            "offer_id": "B1E-REF-2",
+            "barcode": "",
+            "price": "1290",
+            "old_price": "1590",
+            "premium_price": "0",
+            "vat": "0",
+            "count": 0,
+            "weight": 500,
+            "weight_unit": "g",
+            "depth": 330,
+            "width": 220,
+            "height": 60,
+            "dimension_unit": "mm",
+            "attributes": [
+              {
+                "id": 4180,
+                "complex_id": 0,
+                "values": [
+                  {
+                    "value": "Steel organizer BrandX blue"
+                  }
+                ]
+              },
+              {
+                "id": 9024,
+                "complex_id": 0,
+                "values": [
+                  {
+                    "value": "steel"
+                  }
+                ]
+              }
+            ],
+            "complex_attributes": [],
+            "images": [
+              "https://fixture.invalid/reference/canvas-main.jpg",
+              "https://fixture.invalid/reference/canvas-detail.jpg"
+            ],
+            "color_image": "https://fixture.invalid/reference/canvas-color.jpg",
+            "video": "https://fixture.invalid/reference/canvas-video.mp4",
+            "images360": []
+          }
+        ]
+      },
+      "requiresApprovedCredentialBoundary": true,
+      "noLiveCallInReferenceProject": true,
+      "evidence": "B1C api.js static surface; B1E keeps descriptor only"
+    },
+    "pollingDescriptor": {
+      "surface": "importInfo",
+      "method": "POST",
+      "path": "/v1/product/import/info",
+      "write": false,
+      "body": {
+        "task_id": "<import-task-id>"
+      },
+      "requiresApprovedCredentialBoundary": true,
+      "noLiveCallInReferenceProject": true,
+      "evidence": "B1C api.js static surface; B1E keeps descriptor only"
+    },
+    "issues": [
+      {
+        "code": "schema_unknown_key",
+        "severity": "review",
+        "message": "AI row key is outside schema: UnexpectedField",
+        "owner": "listing-prep",
+        "evidence": {
+          "rowIndex": 0,
+          "key": "UnexpectedField"
+        },
+        "draftId": null
+      },
+      {
+        "code": "invalid_select_value",
+        "severity": "block_or_regenerate",
+        "message": "Invalid option removed for Color",
+        "owner": "listing-prep",
+        "evidence": {
+          "rowIndex": 1,
+          "input": [
+            "Blue"
+          ],
+          "valid": [
+            {
+              "v": "Black",
+              "i": 201
+            },
+            {
+              "v": "White",
+              "i": 202
+            }
+          ]
+        },
+        "draftId": null
+      },
+      {
+        "code": "required_draft_field_missing",
+        "severity": "block",
+        "message": "Required draft field is empty: Color",
+        "owner": "listing-prep",
+        "evidence": {
+          "field": "Color"
+        },
+        "draftId": "B1E-REF-2"
+      },
+      {
+        "code": "empty_attribute_values",
+        "severity": "block",
+        "message": "Required Ozon attribute has no value: Color",
+        "owner": "listing-prep",
+        "evidence": {
+          "attributeId": 10096,
+          "label": "Color"
+        },
+        "draftId": "B1E-REF-2"
+      },
+      {
+        "code": "external_write_gate_closed",
+        "severity": "block",
+        "message": "Reference project does not perform live Ozon import writes.",
+        "owner": "external-write-gate",
+        "evidence": null,
+        "draftId": null
+      }
+    ],
+    "manualReviewRequired": true
+  }
+}

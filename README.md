@@ -1,5 +1,19 @@
 # Beixiong Ozon Listing Tool Research Mirror
 
+Current Web Deep Research entrypoint:
+
+```text
+WEB_DEEP_RESEARCH_REQUEST_B1E.md
+```
+
+This B1E entrypoint points Web research to the latest local deobfuscation outputs:
+
+- `docs/research/2026-06-24-b1e-normal-code-reference-and-erp-interfaces.md`
+- `docs/research/b1c-architecture-mirror/normal-code-reference/`
+- `docs/research/b1c-architecture-mirror/normal-code-reference/file-map.yaml`
+- `docs/research/b1c-architecture-mirror/normal-code-reference/erp-interface-map.yaml`
+- `docs/research/b1c-architecture-mirror/normal-code-reference/output/b1e-smoke-output.json`
+
 This repository is a public research mirror of the local folder:
 
 ```text

@@ -1,0 +1,54 @@
+{
+  "sourceRows": [
+    {
+      "sourceSkuIndex": 0,
+      "sourceSku": "SKU-BLACK",
+      "sourceTitle": "1688 demo product black steel organizer",
+      "sourceSpecs": {
+        "color": "Black",
+        "material": "steel",
+        "size": "220x60x330 mm"
+      },
+      "sourceStock": 7,
+      "sourcePriceCny": 1290,
+      "sourceImages": [
+        "https://fixture.invalid/source/black-main.jpg",
+        "https://fixture.invalid/source/black-side.jpg"
+      ]
+    },
+    {
+      "sourceSkuIndex": 1,
+      "sourceSku": "SKU-BLUE-BAD",
+      "sourceTitle": "1688 demo product with invalid color candidate",
+      "sourceSpecs": {
+        "color": "Blue",
+        "material": "",
+        "size": "220x60x330 mm"
+      },
+      "sourceStock": 0,
+      "sourcePriceCny": 1290,
+      "sourceImages": [
+        "https://fixture.invalid/source/blue-main.jpg"
+      ]
+    }
+  ],
+  "sampleAiRows": [
+    {
+      "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435": "Steel organizer BrandX black",
+      "Brand": "BrandX",
+      "Color": "Black",
+      "Material": "steel",
+      "\u5546\u54c1\u7b80\u4ecb": "Compact steel organizer for home storage.",
+      "\u4e3b\u9898\u6807\u7b7e": "#storage,#organizer"
+    },
+    {
+      "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435": "Steel organizer BrandX blue",
+      "Brand": "BrandX",
+      "Color": "Blue",
+      "Material": "",
+      "\u5546\u54c1\u7b80\u4ecb": "Candidate row with invalid color option.",
+      "\u4e3b\u9898\u6807\u7b7e": "BrandX,best,buy-now",
+      "UnexpectedField": "ignored by schema gate"
+    }
+  ]
+}

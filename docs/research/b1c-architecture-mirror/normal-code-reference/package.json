@@ -1,0 +1,10 @@
+{
+  "name": "beixiong-normal-code-reference",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Authorized normal-code reference project for Beixiong Ozon listing-tool behavior research.",
+  "scripts": {
+    "smoke": "node tests-or-smoke/fixture-smoke.mjs"
+  }
+}

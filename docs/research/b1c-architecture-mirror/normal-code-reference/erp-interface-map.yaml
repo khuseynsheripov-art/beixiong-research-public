@@ -1,0 +1,116 @@
+task_id: B1E_BEIXIONG_NORMAL_CODE_REFERENCE_AND_ERP_INTERFACES
+updated_at: "2026-06-24"
+purpose: "Reserve ERP-owned interfaces while keeping Beixiong normal-code-reference as research evidence, not ERP runtime code."
+inputs:
+  source_pack:
+    contract: BeixiongReferenceSourcePackInput
+    normal_code_fixture: fixtures/reference-fixture.mjs#sourcePack
+    consumed_by:
+      - src/draft/draft-merge.js
+      - src/media/prompt-plan.js
+    carries:
+      - product facts
+      - source images
+      - SKU facts/options
+      - prices
+      - supplier metadata
+      - source evidence
+    erp_translation: "SourcePack or source-plugin-v2 output should feed ProductWorkspaceItem creation through typed facts and evidence, not through scraped freeform blobs."
+  form_group:
+    contract: BeixiongReferenceFormGroupInput
+    normal_code_fixture: fixtures/reference-fixture.mjs#formGroup
+    consumed_by:
+      - src/draft/draft-merge.js
+      - src/media/prompt-plan.js
+    carries:
+      - ERP shape-group decisions
+      - SKU group ids
+      - grouping strategy
+    erp_translation: "Use FormGroup/shape-group decisions to avoid Beixiong-style manual SKU grouping friction."
+  canvas_media:
+    contract: BeixiongReferenceCanvasMediaBridge
+    normal_code_fixture: fixtures/reference-fixture.mjs#canvasMedia
+    consumed_by:
+      - src/draft/draft-merge.js
+      - src/media/generated-assets.js
+      - src/ozon/import-preview.js
+    carries:
+      - main image
+      - gallery
+      - color image
+      - video
+      - editable suite id
+      - provenance
+    erp_translation: "Canvas media should become ProductWorkbenchMediaRef with provenance and editable-suite references before import preview."
+  category_search_terms:
+    contract: BeixiongReferenceCategorySignalInput
+    normal_code_fixture: fixtures/reference-fixture.mjs#categorySignals
+    consumed_by:
+      - src/ozon/category-template.js
+      - src/ai/attribute-gap-matrix.js
+      - src/media/prompt-plan.js
+      - src/ozon/import-preview.js
+    carries:
+      - descriptionCategoryId
+      - typeId
+      - category title
+      - search terms
+      - title/tag hints
+    erp_translation: "Search/category signals should drive attribute gaps and title/tag prompts without bypassing category confirmation."
+  selection_signals:
+    contract: BeixiongReferenceSelectionSignalInput
+    normal_code_fixture: fixtures/reference-fixture.mjs#selectionSignals
+    consumed_by:
+      - src/draft/draft-merge.js
+    carries:
+      - selection score placeholder
+      - profit placeholder
+      - future 3D selection placeholder
+    erp_translation: "Reserved only; listing-prep must not block on profit/3D selection signals today."
+outputs:
+  attribute_gap_matrix:
+    contract: AttributeGapMatrixCandidate
+    produced_by: src/ai/attribute-gap-matrix.js
+    smoke_count_field: attributeGapFields
+    erp_candidate_owner: "Product Workbench / AI Fill adapter"
+  import_preview:
+    contract: OzonImportItemPreviewCandidate
+    produced_by: src/ozon/import-preview.js
+    smoke_count_field: importPreviewCandidates
+    erp_candidate_owner: "ImportPreview builder"
+  preflight_issues:
+    contract: PreflightIssueCandidate
+    produced_by:
+      - src/ai/row-normalizer.js
+      - src/draft/draft-merge.js
+      - src/ozon/import-preview.js
+      - src/ozon/upload-intent.js
+    smoke_count_field: preflightIssues
+    erp_candidate_owner: "PreflightResult / manual review table"
+  upload_intent:
+    contract: UploadIntentCandidate
+    produced_by: src/ozon/upload-intent.js
+    smoke_count_field: uploadIntentIssues
+    erp_candidate_owner: "External-write gate / Ozon adapter"
+translation_rules:
+  borrow:
+    - "Separate AI schema from upload template meta."
+    - "Run schema gate before draft/import preview."
+    - "Keep dictionary option id mapping visible."
+    - "Represent external writes as explicit upload intent with closed gate by default."
+  translate:
+    - "Use ERP-owned ProductWorkspaceFieldContract and DraftFieldValue implementations."
+    - "Use ProductWorkbenchMediaRef instead of raw URL-only media fields."
+    - "Use SourcePack/FormGroup/Canvas contracts to reduce manual grouping and media-selection friction."
+  do_not_port:
+    - "Obfuscation scaffolding."
+    - "Credential/cookie/session/header surfaces."
+    - "Provider endpoint details."
+    - "Silent fallback success."
+    - "Direct Beixiong code copy into ERP."
+proof_gaps:
+  - "Complex attributes and grouped/aspect fields need richer fixtures."
+  - "Import polling remains descriptor-only; no platform-side result is proven."
+  - "Image quality and Canvas acceptance are not proven."
+  - "Brand/default brand strategy remains an ERP product decision."
+  - "Real Ozon write gate behavior remains out of scope."

@@ -1,0 +1,82 @@
+{
+  "categoryInfo": {
+    "descriptionCategoryId": 17028922,
+    "typeId": 97031654,
+    "categoryTitle": "B1D Demo Fixture Category"
+  },
+  "categoryAttributes": [
+    {
+      "id": 4180,
+      "name": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435",
+      "type": "String",
+      "is_required": true,
+      "is_collection": false,
+      "description": "Product title shown to Ozon buyers",
+      "group_name": "General",
+      "dictionary_id": 0,
+      "values": []
+    },
+    {
+      "id": 85,
+      "name": "Brand",
+      "type": "String",
+      "is_required": true,
+      "is_collection": false,
+      "description": "Brand value",
+      "group_name": "General",
+      "dictionary_id": 1001,
+      "values": [
+        {
+          "id": 101,
+          "value": "BrandX"
+        },
+        {
+          "id": 102,
+          "value": "BrandY"
+        }
+      ]
+    },
+    {
+      "id": 10096,
+      "name": "Color",
+      "type": "String",
+      "is_required": true,
+      "is_collection": true,
+      "description": "Visible product color",
+      "group_name": "Specification",
+      "dictionary_id": 1002,
+      "values": [
+        {
+          "id": 201,
+          "value": "Black"
+        },
+        {
+          "id": 202,
+          "value": "White"
+        }
+      ]
+    },
+    {
+      "id": 9024,
+      "name": "Material",
+      "type": "String",
+      "is_required": false,
+      "is_collection": false,
+      "description": "Main material",
+      "group_name": "Specification",
+      "dictionary_id": 0,
+      "values": []
+    },
+    {
+      "id": 777001,
+      "name": "Battery included",
+      "type": "Boolean",
+      "is_required": false,
+      "is_collection": false,
+      "description": "Manual safety check field",
+      "group_name": "Manual review",
+      "dictionary_id": 0,
+      "values": []
+    }
+  ]
+}

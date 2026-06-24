@@ -1,0 +1,28 @@
+task_id: B1D_BEIXIONG_LOCAL_FIXTURE_PAYLOAD_TRACE
+classification:
+  borrow_behavior:
+    - category_attributes_to_template_meta
+    - compact_ai_schema_distinct_from_upload_meta
+    - schema_gated_ai_rows
+    - option_contract_v_i_for_ai_and_option_ids_for_upload
+    - draft_media_to_import_media_fields
+    - preflight_visibility_for_defaults_and_empty_values
+  translate_to_erp:
+    - product_workspace_field_contract
+    - draft_field_value_map
+    - preflight_issue_model
+    - product_workbench_media_ref
+    - import_preview_builder_without_external_write
+  reject_or_do_not_port:
+    - obfuscation_scaffold
+    - browser_extension_credential_surfaces
+    - direct_provider_headers_or_endpoints
+    - direct_code_copy
+    - silent_success_claims_from_fallbacks
+  proof_gaps:
+    - real_category_complex_attributes
+    - brand_strategy
+    - multi_store_offer_suffix
+    - import_polling_result_mapping
+    - image_quality_acceptance
+    - external_write_gate

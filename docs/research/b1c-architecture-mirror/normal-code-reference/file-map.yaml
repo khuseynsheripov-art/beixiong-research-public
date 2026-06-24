@@ -1,0 +1,207 @@
+task_id: B1E_BEIXIONG_NORMAL_CODE_REFERENCE_AND_ERP_INTERFACES
+updated_at: "2026-06-24"
+normal_code_root: docs/research/b1c-architecture-mirror/normal-code-reference
+completion_grades:
+  behavior_verified_by_fixture: "Normal module is imported by smoke and participates in output counts."
+  mechanical: "Normal module is a direct contract/shape rewrite from static evidence, but smoke covers only descriptor shape."
+  inferred: "Normal module follows B1C/B1D static evidence and port map but still needs richer fixtures."
+  proof_gap: "External or account-side behavior is represented only as a blocked descriptor."
+files:
+  - original: ui/modules/ozon/category-builder.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/category-builder.js
+    normal: docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/category-template.js
+    responsibility: "Turn Ozon category/type attributes into template meta, field contracts, dictionary ids, and system/manual flags."
+    dependencies:
+      - src/utils/field-utils.js
+    function_map:
+      - original_or_readable_symbol: buildTemplateMeta
+        normal_code_symbol: buildCategoryTemplateMeta
+        behavior_summary: "Builds editorOrder and fieldMeta from categoryInfo + attributes."
+        evidence: "B1C field matrix; B1D fixture/reference output; B1E smoke templateFields=11."
+        confidence: behavior_verified_by_fixture
+      - original_or_readable_symbol: shouldKeepCategoryAttribute
+        normal_code_symbol: shouldKeepCategoryAttribute
+        behavior_summary: "Filters unusable attributes before field contract generation."
+        evidence: "B1C static export and B1E fixture."
+        confidence: behavior_verified_by_fixture
+      - original_or_readable_symbol: getDictionaryAttributeIds
+        normal_code_symbol: getDictionaryAttributeIds
+        behavior_summary: "Returns attribute ids with dictionary metadata."
+        evidence: "B1C static export and B1D module-index."
+        confidence: behavior_verified_by_fixture
+    completion_grade: behavior_verified_by_fixture
+
+  - original: ui/modules/ozon/category-ai-schema-builder.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/category-ai-schema-builder.js
+    normal: docs/research/b1c-architecture-mirror/normal-code-reference/src/ai/attribute-gap-matrix.js
+    responsibility: "Translate template meta into AI-fill gaps and AttributeGapMatrixCandidate."
+    dependencies:
+      - src/ozon/category-template.js
+    function_map:
+      - original_or_readable_symbol: buildAiSchema
+        normal_code_symbol: buildAttributeGapMatrixCandidate
+        behavior_summary: "Builds AI-fill field list from template meta, excluding auto-managed fields."
+        evidence: "B1D port map; B1E smoke attributeGapFields=4."
+        confidence: behavior_verified_by_fixture
+      - original_or_readable_symbol: buildAiSchema
+        normal_code_symbol: buildAiSchemaFromGapMatrix
+        behavior_summary: "Produces compact AI schema field objects from the gap matrix."
+        evidence: "B1D compact schema payload finding."
+        confidence: behavior_verified_by_fixture
+    completion_grade: behavior_verified_by_fixture
+
+  - original: ui/modules/text/schema-payload.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/text/schema-payload.js
+    normal: docs/research/b1c-architecture-mirror/normal-code-reference/src/ai/schema-payload.js
+    responsibility: "Split compact AI schema into structural, multi-select, plain text, description, and tag payload lanes."
+    dependencies: []
+    function_map:
+      - original_or_readable_symbol: splitSchemaPayload
+        normal_code_symbol: splitSchemaPayload
+        behavior_summary: "Routes fields into payload lanes with local limits."
+        evidence: "B1C/B1D schema split evidence; imported by B1E pipeline."
+        confidence: behavior_verified_by_fixture
+      - original_or_readable_symbol: countPayloadOptions
+        normal_code_symbol: countPayloadOptions
+        behavior_summary: "Counts option volume inside a schema payload."
+        evidence: "B1C static export."
+        confidence: mechanical
+      - original_or_readable_symbol: mergeSchemaPayloads
+        normal_code_symbol: mergeSchemaPayloads
+        behavior_summary: "Combines schema payload lanes back into one payload."
+        evidence: "B1C static export."
+        confidence: mechanical
+    completion_grade: behavior_verified_by_fixture
+
+  - original: ui/modules/text/row-normalizer.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/text/row-normalizer.js
+    normal: docs/research/b1c-architecture-mirror/normal-code-reference/src/ai/row-normalizer.js
+    responsibility: "Normalize AI row keys and values against template schema and emit preflight issues."
+    dependencies:
+      - contracts/erp-contracts.js
+      - src/utils/field-utils.js
+    function_map:
+      - original_or_readable_symbol: normalizeAiRows
+        normal_code_symbol: normalizeAiRows
+        behavior_summary: "Drops unknown keys, removes invalid select values, records stats and issues."
+        evidence: "B1D trace; B1E smoke normalizedRows=2 and preflightIssues=4."
+        confidence: behavior_verified_by_fixture
+      - original_or_readable_symbol: sanitizeRowsBySchema
+        normal_code_symbol: sanitizeRowsBySchema
+        behavior_summary: "Keeps only fields present in template meta."
+        evidence: "B1D trace and B1E pipeline."
+        confidence: behavior_verified_by_fixture
+      - original_or_readable_symbol: formatValidationStats
+        normal_code_symbol: formatValidationStats
+        behavior_summary: "Turns stats into human-readable validation summary."
+        evidence: "B1C/B1D validation stats evidence."
+        confidence: behavior_verified_by_fixture
+    completion_grade: behavior_verified_by_fixture
+
+  - original: ui/modules/ozon/uploader-payload.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/uploader-payload.js
+    normal: docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/import-preview.js
+    responsibility: "Build attributes array and Ozon import preview items from draft fields/media/category signals."
+    dependencies:
+      - contracts/erp-contracts.js
+      - src/utils/field-utils.js
+    function_map:
+      - original_or_readable_symbol: buildAttributesArray
+        normal_code_symbol: buildAttributesArray
+        behavior_summary: "Maps field values to Ozon attribute values and dictionary_value_id where available."
+        evidence: "B1C/B1D dynamic probes; B1E import preview output."
+        confidence: behavior_verified_by_fixture
+      - original_or_readable_symbol: buildImportItems
+        normal_code_symbol: buildImportPreviewCandidates
+        behavior_summary: "Builds OzonImportItemPreviewCandidate objects with media/defaults/preflight issues."
+        evidence: "B1D reference output; B1E smoke importPreviewCandidates=2."
+        confidence: behavior_verified_by_fixture
+    completion_grade: behavior_verified_by_fixture
+
+  - original: ui/app/services/draft-sync-service.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/app/services/draft-sync-service.js
+    normal: docs/research/b1c-architecture-mirror/normal-code-reference/src/draft/draft-merge.js
+    responsibility: "Merge SourcePack, FormGroup, Canvas media, AI rows, pricing, packaging, and selection signals into draft candidates."
+    dependencies:
+      - contracts/erp-contracts.js
+    function_map:
+      - original_or_readable_symbol: buildSyncedProductDraftState
+        normal_code_symbol: buildDraftCandidates
+        behavior_summary: "Creates per-SKU draft candidates from normalized rows and source/media inputs."
+        evidence: "B1D inferred draft sync; B1E smoke draftCandidates=2."
+        confidence: behavior_verified_by_fixture
+      - original_or_readable_symbol: resolveProductDraftSyncResult
+        normal_code_symbol: buildDraftCandidates
+        behavior_summary: "Normal reference merges values and emits missing required field issues."
+        evidence: "B1D module-index; B1E smoke preflightIssues."
+        confidence: inferred
+    completion_grade: behavior_verified_by_fixture
+
+  - original: ui/modules/image-generation/prompt-plan-builder.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/image-generation/prompt-plan-builder.js
+    normal: docs/research/b1c-architecture-mirror/normal-code-reference/src/media/prompt-plan.js
+    responsibility: "Build product context and Canvas media prompt plan candidates."
+    dependencies: []
+    function_map:
+      - original_or_readable_symbol: buildProductContext
+        normal_code_symbol: buildProductContext
+        behavior_summary: "Assembles source facts, category signals, form group, and non-invention constraints."
+        evidence: "B1C image matrix; B1E output promptPlan.productContext."
+        confidence: behavior_verified_by_fixture
+      - original_or_readable_symbol: buildPromptPlanPlannerInput
+        normal_code_symbol: buildPromptPlanCandidate
+        behavior_summary: "Builds image slot plan for main image, gallery, and color image."
+        evidence: "B1C direct_dynamic_probe; B1E promptPlan output."
+        confidence: behavior_verified_by_fixture
+    completion_grade: behavior_verified_by_fixture
+
+  - original: ui/modules/image-generation/generated-image-assets.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/image-generation/generated-image-assets.js
+    normal: docs/research/b1c-architecture-mirror/normal-code-reference/src/media/generated-assets.js
+    responsibility: "Represent generated image media refs with provenance."
+    dependencies: []
+    function_map:
+      - original_or_readable_symbol: buildAiGeneratedSourceEntry
+        normal_code_symbol: buildGeneratedImageAssetRef
+        behavior_summary: "Creates ProductWorkbenchMediaRef-like generated image record."
+        evidence: "B1C generated asset probe; B1E generatedAssetRefs=2."
+        confidence: behavior_verified_by_fixture
+    completion_grade: behavior_verified_by_fixture
+
+  - original: ui/modules/ozon/api.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/api.js
+    normal: docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/ozon-api-contract.js
+    responsibility: "Represent Ozon read/write API surfaces as descriptors behind credential/write boundaries."
+    dependencies: []
+    function_map:
+      - original_or_readable_symbol: fetchCategoryTree/fetchCategoryAttributes/fetchAttributeValues
+        normal_code_symbol: OZON_API_SURFACES
+        behavior_summary: "Documents read-side category and attribute endpoints."
+        evidence: "B1C static API surface."
+        confidence: mechanical
+      - original_or_readable_symbol: submitProductImport/pollImportResult/updateProductStocks
+        normal_code_symbol: buildOzonApiRequestDescriptor
+        behavior_summary: "Builds descriptors only; no live calls in reference project."
+        evidence: "B1C static API surface; B1E uploadIntent.requestDescriptor."
+        confidence: proof_gap
+    completion_grade: proof_gap
+
+  - original: ui/modules/ozon/uploader.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/uploader.js
+    normal: docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/upload-intent.js
+    responsibility: "Create UploadIntentCandidate and polling descriptor without live external writes."
+    dependencies:
+      - contracts/erp-contracts.js
+      - src/ozon/ozon-api-contract.js
+    function_map:
+      - original_or_readable_symbol: uploadToOzon
+        normal_code_symbol: createUploadIntentCandidate
+        behavior_summary: "Builds blocked upload intent until explicit external-write approval exists."
+        evidence: "B1D port map; B1E smoke readyForLiveWrite=false."
+        confidence: behavior_verified_by_fixture
+      - original_or_readable_symbol: waitForOzonImportResult
+        normal_code_symbol: createUploadIntentCandidate.pollingDescriptor
+        behavior_summary: "Preserves polling surface as descriptor only."
+        evidence: "B1C static uploader/api surfaces."
+        confidence: proof_gap
+    completion_grade: proof_gap

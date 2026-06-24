@@ -1,0 +1,87 @@
+{
+  "task_id": "B1D_BEIXIONG_LOCAL_FIXTURE_PAYLOAD_TRACE",
+  "updated_at": "2026-06-24",
+  "mirror_root": "docs/research/b1c-architecture-mirror",
+  "entries": [
+    {
+      "original": "ui/modules/ozon/category-builder.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/category-builder.js",
+      "responsibility": "Ozon category attributes to template metadata; field flags; dictionary ids; manual/auto/user-managed gates.",
+      "important_exports": ["buildTemplateMeta", "buildAiSchema", "getDictionaryAttributeIds", "shouldKeepCategoryAttribute"],
+      "erp_candidate_owner": "Product Workbench field-contract service",
+      "port_class": "borrow_behavior_translate_implementation"
+    },
+    {
+      "original": "ui/modules/ozon/category-ai-schema-builder.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/category-ai-schema-builder.js",
+      "responsibility": "Template metadata to AI-fill schema categories.",
+      "important_exports": ["buildAiSchema"],
+      "erp_candidate_owner": "AI Fill adapter / AttributeGapMatrix",
+      "port_class": "borrow_behavior_translate_implementation"
+    },
+    {
+      "original": "ui/modules/text/schema-payload.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/text/schema-payload.js",
+      "responsibility": "Split compact AI schema payload into structural, multi-select, plain text, description, and tag payloads.",
+      "important_exports": ["splitSchemaPayload", "countPayloadOptions", "mergeSchemaPayloads"],
+      "erp_candidate_owner": "AI schema planner",
+      "port_class": "borrow_behavior_translate_implementation"
+    },
+    {
+      "original": "ui/modules/text/row-normalizer.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/text/row-normalizer.js",
+      "responsibility": "Normalize AI rows against schema; drop unknown/invalid values; produce validation stats.",
+      "important_exports": ["normalizeAiRows", "sanitizeRowsBySchema", "formatValidationStats", "applySchemaPropagation"],
+      "erp_candidate_owner": "DraftFieldValue normalizer / PreflightResult",
+      "port_class": "borrow_behavior_translate_implementation"
+    },
+    {
+      "original": "ui/modules/ozon/uploader-payload.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/uploader-payload.js",
+      "responsibility": "Draft fields and media to Ozon import item JSON.",
+      "important_exports": ["buildAttributesArray", "buildImportItems"],
+      "erp_candidate_owner": "ImportPreview builder",
+      "port_class": "borrow_behavior_translate_implementation"
+    },
+    {
+      "original": "ui/modules/ozon/uploader.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/uploader.js",
+      "responsibility": "Submit import items and wait for Ozon import result.",
+      "important_exports": ["uploadToOzon", "waitForOzonImportResult"],
+      "erp_candidate_owner": "Listing external-write adapter behind explicit gate",
+      "port_class": "proof_gap_no_external_write"
+    },
+    {
+      "original": "ui/modules/ozon/api.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/api.js",
+      "responsibility": "Ozon category, attribute, product, import, warehouse, and stock API surfaces.",
+      "important_exports": ["fetchCategoryTree", "fetchCategoryAttributes", "fetchAttributeValues", "submitProductImport", "pollImportResult", "updateProductStocks"],
+      "erp_candidate_owner": "Approved Ozon API adapter",
+      "port_class": "translate_with_credential_boundary"
+    },
+    {
+      "original": "ui/modules/image-generation/prompt-plan-builder.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/image-generation/prompt-plan-builder.js",
+      "responsibility": "Product context and image prompt plan contracts.",
+      "important_exports": ["buildProductContext", "buildPromptPlanPlannerInput", "buildPromptPlanPlannerRequest"],
+      "erp_candidate_owner": "Canvas/Product Workbench media planning",
+      "port_class": "borrow_behavior_translate_implementation"
+    },
+    {
+      "original": "ui/modules/image-generation/generated-image-assets.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/image-generation/generated-image-assets.js",
+      "responsibility": "Generated image source entry metadata.",
+      "important_exports": ["buildAiGeneratedSourceEntry"],
+      "erp_candidate_owner": "ProductWorkbenchMediaRef provenance",
+      "port_class": "borrow_behavior_translate_implementation"
+    },
+    {
+      "original": "ui/app/services/draft-sync-service.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/app/services/draft-sync-service.js",
+      "responsibility": "Draft sync, pricing warning, media export context.",
+      "important_exports": ["buildSyncedProductDraftState", "resolveProductDraftSyncResult", "summarizeDraftPricingWarnings"],
+      "erp_candidate_owner": "ProductWorkspaceItem draft lifecycle",
+      "port_class": "inferred_needs_more_fixture"
+    }
+  ]
+}
