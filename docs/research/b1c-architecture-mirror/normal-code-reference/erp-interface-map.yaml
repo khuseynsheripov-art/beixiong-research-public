@@ -114,3 +114,49 @@ proof_gaps:
   - "Image quality and Canvas acceptance are not proven."
   - "Brand/default brand strategy remains an ERP product decision."
   - "Real Ozon write gate behavior remains out of scope."
+
+b1f_recommended_additions:
+  product_workbench:
+    - contract: ComplexAttributeGroupCandidate
+      produced_by: src/ozon/complex-attributes.js
+      recommendation: "Product Workbench field contracts should preserve complex_id, group name, nested field labels, dictionary_value_id, required flags, and per-draft missing grouped values."
+    - contract: StoreUploadContextCandidate
+      produced_by: src/ozon/store-upload-context.js
+      recommendation: "Store context, store suffix, offer id namespace, and SKU namespace should be ERP-owned configuration, not implicit Beixiong global behavior."
+  preflight:
+    - contract: PreflightIssueCandidateFailureTaxonomy
+      produced_by: src/ozon/failure-taxonomy.js
+      recommendation: "Preflight should classify auth missing, permission denied, category/schema mismatch, validation failure, media failure, duplicate/invalid SKU, polling timeout, manual review, provider failure, and unknown failures."
+    - contract: ComplexAttributePreviewIssue
+      produced_by: src/ozon/complex-attributes.js
+      recommendation: "Missing required complex-group values should block upload intent and should be visible before import preview is considered safe."
+  upload_intent:
+    - contract: ImportPollingResultCandidate
+      produced_by: src/ozon/import-results.js
+      recommendation: "UploadIntent should preserve task ids, per-offer result rows, imported/failed/manual-review/processing counts, missing expected offers, retry hints, and mapped issues."
+    - contract: StoreScopedUploadIntentCandidate
+      produced_by: src/ozon/store-upload-context.js
+      recommendation: "UploadIntent should keep store-scoped offer ids separate from base draft ids so retries and polling can map back to the right ProductWorkspaceItem."
+  canvas_media_bridge:
+    - contract: CanvasMediaProviderProofGapCandidate
+      produced_by: src/media/provider-proof-gaps.js
+      recommendation: "CanvasMediaBridge should carry reference selection, prompt-plan slots, provider task descriptors, generated asset refs, editable suite id, and explicit image-quality/user-acceptance status."
+  do_not_port:
+    - "Live provider request headers or provider credentials."
+    - "Browser-account-coupled store selection."
+    - "Implicit suffix mutation that changes base SKU identity."
+    - "Treating provider success URL as accepted Canvas media."
+  b1f_smoke_counts:
+    complexGroups: 2
+    complexAttributeRows: 4
+    storeContexts: 2
+    storeMappedDrafts: 4
+    importResultRows: 4
+    importImported: 1
+    importFailed: 1
+    importManualReview: 1
+    failureCases: 7
+    failureClasses: 7
+    mediaProviderTasks: 3
+    mediaProofGaps: 5
+    preflightIssues: 12

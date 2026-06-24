@@ -9,3 +9,8 @@ export { buildAttributesArray, buildImportPreviewCandidates } from "./ozon/impor
 export { OZON_API_SURFACES, buildOzonApiRequestDescriptor } from "./ozon/ozon-api-contract.js";
 export { createUploadIntentCandidate } from "./ozon/upload-intent.js";
 export { runReferencePipeline } from "./pipeline/run-reference-pipeline.js";
+export { buildComplexAttributeRows, buildComplexAttributesForDrafts, attachComplexAttributesToImportPreviews } from "./ozon/complex-attributes.js";
+export { mapImportResultRows, summarizeImportPollingResult } from "./ozon/import-results.js";
+export { appendStoreSuffix, stripStoreSuffix, injectStoreSuffixIntoSkuCode, stripStoreSuffixFromSkuCode, buildStoreUploadContexts, classifyStoreHelperForErp } from "./ozon/store-upload-context.js";
+export { FAILURE_CLASS, classifyFailure, mapFailureToPreflightIssue, buildFailureTaxonomyReport } from "./ozon/failure-taxonomy.js";
+export { MEDIA_PROOF_GAP, normalizeProviderTaskProbe, buildMediaProviderProofGapReport } from "./media/provider-proof-gaps.js";

@@ -1,0 +1,744 @@
+{
+  "referenceProject": "B1F complex attributes/import polling/media gaps",
+  "noExternalCalls": true,
+  "readyForLiveWrite": false,
+  "counts": {
+    "complexGroups": 2,
+    "complexAttributeDrafts": 2,
+    "complexAttributeRows": 4,
+    "storeContexts": 2,
+    "storeMappedDrafts": 4,
+    "importResultRows": 4,
+    "importImported": 1,
+    "importFailed": 1,
+    "importManualReview": 1,
+    "failureCases": 7,
+    "failureClasses": 7,
+    "mediaProviderTasks": 3,
+    "mediaProofGaps": 5,
+    "preflightIssues": 12
+  },
+  "complex": {
+    "contract": "ComplexAttributePreviewCandidate",
+    "byDraft": [
+      {
+        "draftId": "B1F-ADV-1",
+        "complex_attributes": [
+          {
+            "complex_id": 9001,
+            "groupName": "Certification",
+            "attributes": [
+              {
+                "id": 70010,
+                "complex_id": 9001,
+                "values": [
+                  {
+                    "dictionary_value_id": 9101,
+                    "value": "EAC"
+                  }
+                ]
+              },
+              {
+                "id": 70011,
+                "complex_id": 9001,
+                "values": [
+                  {
+                    "value": "EAC-FIX-001"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "complex_id": 9002,
+            "groupName": "Package set",
+            "attributes": [
+              {
+                "id": 70012,
+                "complex_id": 9002,
+                "values": [
+                  {
+                    "value": "rack"
+                  }
+                ]
+              },
+              {
+                "id": 70012,
+                "complex_id": 9002,
+                "values": [
+                  {
+                    "value": "screw kit"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "draftId": "B1F-ADV-2",
+        "complex_attributes": [
+          {
+            "complex_id": 9001,
+            "groupName": "Certification",
+            "attributes": [
+              {
+                "id": 70010,
+                "complex_id": 9001,
+                "values": [
+                  {
+                    "dictionary_value_id": 9102,
+                    "value": "Declaration"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "complex_id": 9002,
+            "groupName": "Package set",
+            "attributes": [
+              {
+                "id": 70012,
+                "complex_id": 9002,
+                "values": [
+                  {
+                    "value": "rack"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "issues": [
+      {
+        "code": "complex_required_field_missing",
+        "severity": "block",
+        "message": "Required complex attribute is empty: Certification.Certificate number",
+        "owner": "listing-prep",
+        "evidence": {
+          "complexId": 9001,
+          "attributeId": 70011,
+          "label": "Certificate number"
+        },
+        "draftId": "B1F-ADV-2"
+      }
+    ],
+    "complexGroupCount": 2,
+    "complexRowCount": 4
+  },
+  "storeContexts": [
+    {
+      "contract": "StoreUploadContextCandidate",
+      "storeId": "store-main",
+      "storeName": "Main Store",
+      "suffix": "main",
+      "mappedDrafts": [
+        {
+          "draftId": "B1F-ADV-1",
+          "storeId": "store-main",
+          "offerId": "B1F-ADV-1-main",
+          "skuCode": "BLACK-MAIN",
+          "originalOfferId": "B1F-ADV-1"
+        },
+        {
+          "draftId": "B1F-ADV-2",
+          "storeId": "store-main",
+          "offerId": "B1F-ADV-2-main",
+          "skuCode": "WHITE-MAIN",
+          "originalOfferId": "B1F-ADV-2"
+        }
+      ],
+      "erpOwnership": "ERP should own store config and suffix policy; Beixiong helper behavior is reference only."
+    },
+    {
+      "contract": "StoreUploadContextCandidate",
+      "storeId": "store-spb",
+      "storeName": "SPB Store",
+      "suffix": "spb",
+      "mappedDrafts": [
+        {
+          "draftId": "B1F-ADV-1",
+          "storeId": "store-spb",
+          "offerId": "B1F-ADV-1-spb",
+          "skuCode": "BLACK-SPB",
+          "originalOfferId": "B1F-ADV-1"
+        },
+        {
+          "draftId": "B1F-ADV-2",
+          "storeId": "store-spb",
+          "offerId": "B1F-ADV-2-spb",
+          "skuCode": "WHITE-SPB",
+          "originalOfferId": "B1F-ADV-2"
+        }
+      ],
+      "erpOwnership": "ERP should own store config and suffix policy; Beixiong helper behavior is reference only."
+    }
+  ],
+  "storeHelperClassification": {
+    "borrow": [
+      "suffix collision prevention",
+      "strip/append symmetry tests"
+    ],
+    "translate": [
+      "store config",
+      "offer id policy",
+      "SKU namespace ownership"
+    ],
+    "reject": [
+      "implicit global suffix mutation",
+      "browser-account-coupled store selection"
+    ],
+    "proof_gap": [
+      "real multi-store upload result mapping was not executed"
+    ]
+  },
+  "importPolling": {
+    "contract": "ImportPollingResultCandidate",
+    "taskIds": [
+      "fixture-task-1"
+    ],
+    "status": "partial_failed",
+    "counts": {
+      "total": 4,
+      "imported": 1,
+      "failed": 1,
+      "manualReview": 1,
+      "processing": 1,
+      "unknown": 0
+    },
+    "rows": [
+      {
+        "taskId": "fixture-task-1",
+        "offerId": "B1F-ADV-1",
+        "productId": 111,
+        "status": "imported",
+        "warnings": [],
+        "errors": [],
+        "issues": [],
+        "raw": {
+          "task_id": "fixture-task-1",
+          "offer_id": "B1F-ADV-1",
+          "product_id": 111,
+          "status": "imported",
+          "warnings": [],
+          "errors": []
+        }
+      },
+      {
+        "taskId": "fixture-task-1",
+        "offerId": "B1F-ADV-2",
+        "productId": null,
+        "status": "failed",
+        "warnings": [],
+        "errors": [
+          "duplicate offer sku"
+        ],
+        "issues": [
+          {
+            "code": "duplicate_or_invalid_sku",
+            "severity": "block",
+            "message": "duplicate offer sku",
+            "owner": "preflight",
+            "evidence": {
+              "source": "ozon_import_result",
+              "message": "duplicate offer sku",
+              "draftId": "B1F-ADV-2"
+            },
+            "draftId": "B1F-ADV-2"
+          }
+        ],
+        "raw": {
+          "task_id": "fixture-task-1",
+          "offer_id": "B1F-ADV-2",
+          "product_id": null,
+          "status": "failed",
+          "warnings": [],
+          "errors": [
+            "duplicate offer sku"
+          ]
+        }
+      },
+      {
+        "taskId": "fixture-task-1",
+        "offerId": "B1F-ADV-3",
+        "productId": null,
+        "status": "manual_review",
+        "warnings": [
+          "media requires manual review"
+        ],
+        "errors": [],
+        "issues": [],
+        "raw": {
+          "task_id": "fixture-task-1",
+          "offer_id": "B1F-ADV-3",
+          "product_id": null,
+          "status": "manual_review",
+          "warnings": [
+            "media requires manual review"
+          ],
+          "errors": []
+        }
+      },
+      {
+        "taskId": "fixture-task-1",
+        "offerId": "B1F-ADV-4",
+        "productId": null,
+        "status": "processing",
+        "warnings": [
+          "still pending"
+        ],
+        "errors": [],
+        "issues": [],
+        "raw": {
+          "task_id": "fixture-task-1",
+          "offer_id": "B1F-ADV-4",
+          "product_id": null,
+          "status": "processing",
+          "warnings": [
+            "still pending"
+          ],
+          "errors": []
+        }
+      }
+    ],
+    "issues": [
+      {
+        "code": "duplicate_or_invalid_sku",
+        "severity": "block",
+        "message": "duplicate offer sku",
+        "owner": "preflight",
+        "evidence": {
+          "source": "ozon_import_result",
+          "message": "duplicate offer sku",
+          "draftId": "B1F-ADV-2"
+        },
+        "draftId": "B1F-ADV-2"
+      }
+    ],
+    "noExternalCalls": true,
+    "evidence": "B1C/B1D uploader waitForOzonImportResult/pollImportResult surfaces; local fixture only"
+  },
+  "failureTaxonomy": {
+    "contract": "PreflightIssueCandidateFailureTaxonomy",
+    "total": 7,
+    "byClass": {
+      "auth_missing": 1,
+      "permission_denied": 1,
+      "category_schema_mismatch": 1,
+      "validation_failed": 1,
+      "media_failed": 1,
+      "duplicate_or_invalid_sku": 1,
+      "import_polling_timeout": 1
+    },
+    "issues": [
+      {
+        "code": "auth_missing",
+        "severity": "block",
+        "message": "API key missing",
+        "owner": "external-write-gate",
+        "evidence": {
+          "source": "ozon_auth",
+          "message": "API key missing",
+          "owner": "external-write-gate"
+        },
+        "draftId": null
+      },
+      {
+        "code": "permission_denied",
+        "severity": "block",
+        "message": "permission denied for category",
+        "owner": "ozon-adapter",
+        "evidence": {
+          "source": "ozon_permission",
+          "message": "permission denied for category",
+          "owner": "ozon-adapter"
+        },
+        "draftId": null
+      },
+      {
+        "code": "category_schema_mismatch",
+        "severity": "block",
+        "message": "category attribute schema mismatch",
+        "owner": "product-workbench",
+        "evidence": {
+          "source": "ozon_schema",
+          "message": "category attribute schema mismatch",
+          "owner": "product-workbench"
+        },
+        "draftId": null
+      },
+      {
+        "code": "validation_failed",
+        "severity": "block",
+        "message": "required value missing",
+        "owner": "preflight",
+        "evidence": {
+          "source": "ozon_validation",
+          "message": "required value missing",
+          "owner": "preflight"
+        },
+        "draftId": null
+      },
+      {
+        "code": "media_failed",
+        "severity": "block",
+        "message": "image validation failed",
+        "owner": "canvas-media",
+        "evidence": {
+          "source": "ozon_media",
+          "message": "image validation failed",
+          "owner": "canvas-media"
+        },
+        "draftId": null
+      },
+      {
+        "code": "duplicate_or_invalid_sku",
+        "severity": "block",
+        "message": "duplicate offer sku",
+        "owner": "upload-intent",
+        "evidence": {
+          "source": "ozon_import_result",
+          "message": "duplicate offer sku",
+          "owner": "upload-intent"
+        },
+        "draftId": null
+      },
+      {
+        "code": "import_polling_timeout",
+        "severity": "review",
+        "message": "polling timeout while waiting for import result",
+        "owner": "upload-intent",
+        "evidence": {
+          "source": "ozon_polling",
+          "message": "polling timeout while waiting for import result",
+          "owner": "upload-intent"
+        },
+        "draftId": null
+      }
+    ],
+    "evidence": "B1F packet focus + B1C/B1D uploader/api/provider surfaces; local fixture only"
+  },
+  "mediaProofGaps": {
+    "contract": "CanvasMediaProviderProofGapCandidate",
+    "tasks": [
+      {
+        "providerTaskId": "provider-task-1",
+        "providerId": "fixture-provider",
+        "model": "fixture-image",
+        "status": "unknown",
+        "outputUrls": [
+          "https://fixture.invalid/b1f/generated-main.jpg"
+        ],
+        "error": "",
+        "noProviderCallInReferenceProject": true,
+        "proofGap": "provider_polling"
+      },
+      {
+        "providerTaskId": "provider-task-2",
+        "providerId": "fixture-provider",
+        "model": "fixture-image",
+        "status": "failed",
+        "outputUrls": [],
+        "error": "task failed in provider",
+        "noProviderCallInReferenceProject": true,
+        "proofGap": "provider_polling"
+      },
+      {
+        "providerTaskId": "provider-task-3",
+        "providerId": "fixture-provider",
+        "model": "fixture-image",
+        "status": "processing",
+        "outputUrls": [],
+        "error": "",
+        "noProviderCallInReferenceProject": true,
+        "proofGap": "provider_polling"
+      }
+    ],
+    "gaps": [
+      {
+        "gap": "reference_selection",
+        "status": "fixture_backed",
+        "recommendation": "CanvasMediaBridge should carry source image provenance and editable suite id."
+      },
+      {
+        "gap": "prompt_plan",
+        "status": "fixture_backed",
+        "recommendation": "Product Workbench should keep prompt slots and non-invention constraints visible."
+      },
+      {
+        "gap": "provider_request",
+        "status": "proof_gap",
+        "recommendation": "Provider request bodies and headers remain outside B1F; use approved provider adapter only."
+      },
+      {
+        "gap": "provider_polling",
+        "status": "fixture_backed_descriptor_only",
+        "recommendation": "Represent provider polling as descriptor/result mapping, not live call."
+      },
+      {
+        "gap": "generated_asset_acceptance",
+        "status": "needs_user_or_visual_acceptance",
+        "recommendation": "Do not treat generated URLs as accepted Canvas media until image quality/user review passes."
+      }
+    ],
+    "gapCount": 5,
+    "noExternalCalls": true
+  },
+  "advancedImportPreviews": [
+    {
+      "contract": "OzonImportItemPreviewCandidate",
+      "draftId": "B1F-ADV-1",
+      "item": {
+        "description_category_id": 17028922,
+        "type_id": 97031654,
+        "name": "Certified steel organizer black",
+        "offer_id": "B1F-ADV-1",
+        "barcode": "",
+        "price": "1390",
+        "old_price": "1690",
+        "premium_price": "0",
+        "vat": "0",
+        "count": 0,
+        "weight": 700,
+        "weight_unit": "g",
+        "depth": 360,
+        "width": 240,
+        "height": 80,
+        "dimension_unit": "mm",
+        "attributes": [
+          {
+            "id": 4180,
+            "complex_id": 0,
+            "values": [
+              {
+                "value": "Certified steel organizer black"
+              }
+            ]
+          },
+          {
+            "id": 10096,
+            "complex_id": 0,
+            "values": [
+              {
+                "dictionary_value_id": 201,
+                "value": "Black"
+              }
+            ]
+          },
+          {
+            "id": 9024,
+            "complex_id": 0,
+            "values": [
+              {
+                "value": "steel"
+              }
+            ]
+          },
+          {
+            "id": 70010,
+            "complex_id": 9001,
+            "values": [
+              {
+                "dictionary_value_id": 9101,
+                "value": "EAC"
+              }
+            ]
+          },
+          {
+            "id": 70011,
+            "complex_id": 9001,
+            "values": [
+              {
+                "value": "EAC-FIX-001"
+              }
+            ]
+          },
+          {
+            "id": 70012,
+            "complex_id": 9002,
+            "values": [
+              {
+                "value": "rack"
+              },
+              {
+                "value": "screw kit"
+              }
+            ]
+          }
+        ],
+        "complex_attributes": [
+          {
+            "complex_id": 9001,
+            "groupName": "Certification",
+            "attributes": [
+              {
+                "id": 70010,
+                "complex_id": 9001,
+                "values": [
+                  {
+                    "dictionary_value_id": 9101,
+                    "value": "EAC"
+                  }
+                ]
+              },
+              {
+                "id": 70011,
+                "complex_id": 9001,
+                "values": [
+                  {
+                    "value": "EAC-FIX-001"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "complex_id": 9002,
+            "groupName": "Package set",
+            "attributes": [
+              {
+                "id": 70012,
+                "complex_id": 9002,
+                "values": [
+                  {
+                    "value": "rack"
+                  }
+                ]
+              },
+              {
+                "id": 70012,
+                "complex_id": 9002,
+                "values": [
+                  {
+                    "value": "screw kit"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "images": [
+          "https://fixture.invalid/b1f/canvas-main.jpg",
+          "https://fixture.invalid/b1f/canvas-detail.jpg"
+        ],
+        "color_image": "https://fixture.invalid/b1f/canvas-color.jpg",
+        "video": "https://fixture.invalid/b1f/canvas-video.mp4",
+        "images360": []
+      }
+    },
+    {
+      "contract": "OzonImportItemPreviewCandidate",
+      "draftId": "B1F-ADV-2",
+      "item": {
+        "description_category_id": 17028922,
+        "type_id": 97031654,
+        "name": "Certified steel organizer white",
+        "offer_id": "B1F-ADV-2",
+        "barcode": "",
+        "price": "1390",
+        "old_price": "1690",
+        "premium_price": "0",
+        "vat": "0",
+        "count": 0,
+        "weight": 700,
+        "weight_unit": "g",
+        "depth": 360,
+        "width": 240,
+        "height": 80,
+        "dimension_unit": "mm",
+        "attributes": [
+          {
+            "id": 4180,
+            "complex_id": 0,
+            "values": [
+              {
+                "value": "Certified steel organizer white"
+              }
+            ]
+          },
+          {
+            "id": 10096,
+            "complex_id": 0,
+            "values": [
+              {
+                "dictionary_value_id": 202,
+                "value": "White"
+              }
+            ]
+          },
+          {
+            "id": 9024,
+            "complex_id": 0,
+            "values": [
+              {
+                "value": "steel"
+              }
+            ]
+          },
+          {
+            "id": 70010,
+            "complex_id": 9001,
+            "values": [
+              {
+                "dictionary_value_id": 9102,
+                "value": "Declaration"
+              }
+            ]
+          },
+          {
+            "id": 70012,
+            "complex_id": 9002,
+            "values": [
+              {
+                "value": "rack"
+              }
+            ]
+          }
+        ],
+        "complex_attributes": [
+          {
+            "complex_id": 9001,
+            "groupName": "Certification",
+            "attributes": [
+              {
+                "id": 70010,
+                "complex_id": 9001,
+                "values": [
+                  {
+                    "dictionary_value_id": 9102,
+                    "value": "Declaration"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "complex_id": 9002,
+            "groupName": "Package set",
+            "attributes": [
+              {
+                "id": 70012,
+                "complex_id": 9002,
+                "values": [
+                  {
+                    "value": "rack"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "images": [
+          "https://fixture.invalid/b1f/canvas-main.jpg",
+          "https://fixture.invalid/b1f/canvas-detail.jpg"
+        ],
+        "color_image": "https://fixture.invalid/b1f/canvas-color.jpg",
+        "video": "https://fixture.invalid/b1f/canvas-video.mp4",
+        "images360": []
+      }
+    }
+  ]
+}

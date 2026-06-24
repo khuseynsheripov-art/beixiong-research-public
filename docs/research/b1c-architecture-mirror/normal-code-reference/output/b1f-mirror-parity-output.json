@@ -1,0 +1,787 @@
+{
+  "task_id": "B1F_BEIXIONG_COMPLEX_ATTRIBUTES_IMPORT_POLLING_AND_MEDIA_GAPS",
+  "generated_at": "2026-06-24",
+  "tooling": {
+    "runtime": "node",
+    "ast_tooling": "lightweight ESM surface/call-edge scanner written in Node because Babel/acorn packages are unavailable in this sandbox",
+    "babel_available": false,
+    "apk_native_binary_tools_used": false
+  },
+  "noExternalCalls": true,
+  "coverage": {
+    "priorityFiles": 15,
+    "parityBackedNormalCodeMirror": 11,
+    "proofGapMirrorFiles": 4,
+    "priorityReadableOnly": 0,
+    "overallReadableOnly": 25,
+    "exportMappingFailures": 0,
+    "parityCallEdgeFailures": 0
+  },
+  "fixtureIo": {
+    "templateFields": 12,
+    "normalizedRows": 2,
+    "importPreviewCandidates": 2,
+    "complexAttributeRows": 4,
+    "importResultRows": 4,
+    "storeContexts": 2,
+    "failureCases": 7,
+    "mediaProofGaps": 5
+  },
+  "parityBackedFiles": [
+    "ui/modules/ozon/category-builder.js",
+    "ui/modules/ozon/category-ai-schema-builder.js",
+    "ui/modules/text/schema-payload.js",
+    "ui/modules/text/row-normalizer.js",
+    "ui/modules/ozon/uploader-payload.js",
+    "ui/modules/ozon/uploader.js",
+    "ui/modules/ozon/store-upload-helpers.js",
+    "ui/app/services/draft-sync-service.js",
+    "ui/modules/image-generation/prompt-plan-builder.js",
+    "ui/modules/image-generation/generated-image-assets.js",
+    "ui/modules/image-generation/generated-image-state.js"
+  ],
+  "proofGapFiles": [
+    "ui/modules/ozon/api.js",
+    "services/providers/adapters/openai-compatible-image-polling.js",
+    "services/providers/adapters/openai-compatible-image-request.js",
+    "ui/app/workflows/ozon-upload-workflow.js"
+  ],
+  "readableOnlySummary": {
+    "priority_files": [],
+    "overall_count": 25,
+    "note": "Non-priority readable focus files remain readable-only and are not claimed as normal-code parity."
+  },
+  "files": [
+    {
+      "original": "ui/modules/ozon/category-builder.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/category-builder.js",
+      "normal_code_mirror": "docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/ozon/category-builder.js",
+      "normal_code_reference": [
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/category-template.js",
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/ai/attribute-gap-matrix.js"
+      ],
+      "parity_status": "parity_backed",
+      "export_symbol_mapping": {
+        "expected": [
+          "buildTemplateMeta",
+          "buildCategoryTemplateMeta",
+          "getDictionaryAttributeIds",
+          "shouldKeepCategoryAttribute",
+          "buildAttributeGapMatrixCandidate",
+          "buildAiSchema"
+        ],
+        "actual": [
+          "buildAiSchema",
+          "buildAttributeGapMatrixCandidate",
+          "buildCategoryTemplateMeta",
+          "buildTemplateMeta",
+          "getDictionaryAttributeIds",
+          "shouldKeepCategoryAttribute"
+        ],
+        "missing": [],
+        "passed": true
+      },
+      "call_edge_mapping": {
+        "imports": [
+          "../../../../normal-code-reference/src/ai/attribute-gap-matrix.js",
+          "../../../../normal-code-reference/src/ozon/category-template.js"
+        ],
+        "callEdges": [],
+        "linksToNormalCodeReference": true
+      },
+      "fixture_io_comparison": {
+        "description": "template field count and category schema build",
+        "shared_fixture_output": {
+          "templateFields": 12,
+          "normalizedRows": 2,
+          "importPreviewCandidates": 2,
+          "complexAttributeRows": 4,
+          "importResultRows": 4,
+          "storeContexts": 2,
+          "failureCases": 7,
+          "mediaProofGaps": 5
+        },
+        "passed": true
+      },
+      "proof_gap": false
+    },
+    {
+      "original": "ui/modules/ozon/category-ai-schema-builder.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/category-ai-schema-builder.js",
+      "normal_code_mirror": "docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/ozon/category-ai-schema-builder.js",
+      "normal_code_reference": [
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/ai/attribute-gap-matrix.js"
+      ],
+      "parity_status": "parity_backed",
+      "export_symbol_mapping": {
+        "expected": [
+          "buildAttributeGapMatrixCandidate",
+          "buildAiSchema"
+        ],
+        "actual": [
+          "buildAiSchema",
+          "buildAttributeGapMatrixCandidate"
+        ],
+        "missing": [],
+        "passed": true
+      },
+      "call_edge_mapping": {
+        "imports": [
+          "../../../../normal-code-reference/src/ai/attribute-gap-matrix.js"
+        ],
+        "callEdges": [],
+        "linksToNormalCodeReference": true
+      },
+      "fixture_io_comparison": {
+        "description": "attribute gap matrix field count",
+        "shared_fixture_output": {
+          "templateFields": 12,
+          "normalizedRows": 2,
+          "importPreviewCandidates": 2,
+          "complexAttributeRows": 4,
+          "importResultRows": 4,
+          "storeContexts": 2,
+          "failureCases": 7,
+          "mediaProofGaps": 5
+        },
+        "passed": true
+      },
+      "proof_gap": false
+    },
+    {
+      "original": "ui/modules/text/schema-payload.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/text/schema-payload.js",
+      "normal_code_mirror": "docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/text/schema-payload.js",
+      "normal_code_reference": [
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/ai/schema-payload.js"
+      ],
+      "parity_status": "parity_backed",
+      "export_symbol_mapping": {
+        "expected": [
+          "splitSchemaPayload",
+          "countPayloadOptions",
+          "mergeSchemaPayloads"
+        ],
+        "actual": [
+          "countPayloadOptions",
+          "mergeSchemaPayloads",
+          "splitSchemaPayload"
+        ],
+        "missing": [],
+        "passed": true
+      },
+      "call_edge_mapping": {
+        "imports": [
+          "../../../../normal-code-reference/src/ai/schema-payload.js"
+        ],
+        "callEdges": [],
+        "linksToNormalCodeReference": true
+      },
+      "fixture_io_comparison": {
+        "description": "schema payload lane keys",
+        "shared_fixture_output": {
+          "templateFields": 12,
+          "normalizedRows": 2,
+          "importPreviewCandidates": 2,
+          "complexAttributeRows": 4,
+          "importResultRows": 4,
+          "storeContexts": 2,
+          "failureCases": 7,
+          "mediaProofGaps": 5
+        },
+        "passed": true
+      },
+      "proof_gap": false
+    },
+    {
+      "original": "ui/modules/text/row-normalizer.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/text/row-normalizer.js",
+      "normal_code_mirror": "docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/text/row-normalizer.js",
+      "normal_code_reference": [
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/ai/row-normalizer.js"
+      ],
+      "parity_status": "parity_backed",
+      "export_symbol_mapping": {
+        "expected": [
+          "normalizeAiRows",
+          "sanitizeRowsBySchema",
+          "formatValidationStats"
+        ],
+        "actual": [
+          "formatValidationStats",
+          "normalizeAiRows",
+          "sanitizeRowsBySchema"
+        ],
+        "missing": [],
+        "passed": true
+      },
+      "call_edge_mapping": {
+        "imports": [
+          "../../../../normal-code-reference/src/ai/row-normalizer.js"
+        ],
+        "callEdges": [],
+        "linksToNormalCodeReference": true
+      },
+      "fixture_io_comparison": {
+        "description": "normalized rows and invalid select handling",
+        "shared_fixture_output": {
+          "templateFields": 12,
+          "normalizedRows": 2,
+          "importPreviewCandidates": 2,
+          "complexAttributeRows": 4,
+          "importResultRows": 4,
+          "storeContexts": 2,
+          "failureCases": 7,
+          "mediaProofGaps": 5
+        },
+        "passed": true
+      },
+      "proof_gap": false
+    },
+    {
+      "original": "ui/modules/ozon/uploader-payload.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/uploader-payload.js",
+      "normal_code_mirror": "docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/ozon/uploader-payload.js",
+      "normal_code_reference": [
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/import-preview.js",
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/complex-attributes.js"
+      ],
+      "parity_status": "parity_backed",
+      "export_symbol_mapping": {
+        "expected": [
+          "buildAttributesArray",
+          "buildImportItems",
+          "buildComplexAttributeRows",
+          "buildComplexAttributesForDrafts",
+          "attachComplexAttributesToImportPreviews"
+        ],
+        "actual": [
+          "attachComplexAttributesToImportPreviews",
+          "buildAttributesArray",
+          "buildComplexAttributeRows",
+          "buildComplexAttributesForDrafts",
+          "buildImportItems"
+        ],
+        "missing": [],
+        "passed": true
+      },
+      "call_edge_mapping": {
+        "imports": [
+          "../../../../normal-code-reference/src/ozon/complex-attributes.js",
+          "../../../../normal-code-reference/src/ozon/import-preview.js"
+        ],
+        "callEdges": [],
+        "linksToNormalCodeReference": true
+      },
+      "fixture_io_comparison": {
+        "description": "import preview count and complex attribute rows",
+        "shared_fixture_output": {
+          "templateFields": 12,
+          "normalizedRows": 2,
+          "importPreviewCandidates": 2,
+          "complexAttributeRows": 4,
+          "importResultRows": 4,
+          "storeContexts": 2,
+          "failureCases": 7,
+          "mediaProofGaps": 5
+        },
+        "passed": true
+      },
+      "proof_gap": false
+    },
+    {
+      "original": "ui/modules/ozon/uploader.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/uploader.js",
+      "normal_code_mirror": "docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/ozon/uploader.js",
+      "normal_code_reference": [
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/upload-intent.js",
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/import-results.js",
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/failure-taxonomy.js"
+      ],
+      "parity_status": "parity_backed",
+      "export_symbol_mapping": {
+        "expected": [
+          "createUploadIntentCandidate",
+          "summarizeImportPollingResult",
+          "mapImportResultRows",
+          "classifyFailure",
+          "mapFailureToPreflightIssue",
+          "uploadToOzon",
+          "waitForOzonImportResultFromFixture"
+        ],
+        "actual": [
+          "classifyFailure",
+          "createUploadIntentCandidate",
+          "mapFailureToPreflightIssue",
+          "mapImportResultRows",
+          "summarizeImportPollingResult",
+          "uploadToOzon",
+          "waitForOzonImportResultFromFixture"
+        ],
+        "missing": [],
+        "passed": true
+      },
+      "call_edge_mapping": {
+        "imports": [
+          "../../../../normal-code-reference/src/ozon/failure-taxonomy.js",
+          "../../../../normal-code-reference/src/ozon/import-results.js",
+          "../../../../normal-code-reference/src/ozon/upload-intent.js"
+        ],
+        "callEdges": [
+          "createUploadIntentCandidate",
+          "summarizeImportPollingResult",
+          "uploadToOzon",
+          "waitForOzonImportResultFromFixture"
+        ],
+        "linksToNormalCodeReference": true
+      },
+      "fixture_io_comparison": {
+        "description": "blocked upload intent and local import result mapping",
+        "shared_fixture_output": {
+          "templateFields": 12,
+          "normalizedRows": 2,
+          "importPreviewCandidates": 2,
+          "complexAttributeRows": 4,
+          "importResultRows": 4,
+          "storeContexts": 2,
+          "failureCases": 7,
+          "mediaProofGaps": 5
+        },
+        "passed": true
+      },
+      "proof_gap": false
+    },
+    {
+      "original": "ui/modules/ozon/api.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/api.js",
+      "normal_code_mirror": "docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/ozon/api.js",
+      "normal_code_reference": [
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/ozon-api-contract.js",
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/failure-taxonomy.js"
+      ],
+      "parity_status": "proof_gap",
+      "export_symbol_mapping": {
+        "expected": [
+          "OZON_API_SURFACES",
+          "buildOzonApiRequestDescriptor",
+          "classifyFailure",
+          "mapFailureToPreflightIssue",
+          "buildFailureTaxonomyReport"
+        ],
+        "actual": [
+          "OZON_API_SURFACES",
+          "buildFailureTaxonomyReport",
+          "buildOzonApiRequestDescriptor",
+          "classifyFailure",
+          "mapFailureToPreflightIssue"
+        ],
+        "missing": [],
+        "passed": true
+      },
+      "call_edge_mapping": {
+        "imports": [
+          "../../../../normal-code-reference/src/ozon/failure-taxonomy.js",
+          "../../../../normal-code-reference/src/ozon/ozon-api-contract.js"
+        ],
+        "callEdges": [],
+        "linksToNormalCodeReference": true
+      },
+      "fixture_io_comparison": {
+        "description": "descriptor surface only; live API behavior not proven",
+        "shared_fixture_output": {
+          "templateFields": 12,
+          "normalizedRows": 2,
+          "importPreviewCandidates": 2,
+          "complexAttributeRows": 4,
+          "importResultRows": 4,
+          "storeContexts": 2,
+          "failureCases": 7,
+          "mediaProofGaps": 5
+        },
+        "passed": "proof_gap_explicit"
+      },
+      "proof_gap": true
+    },
+    {
+      "original": "ui/modules/ozon/store-upload-helpers.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/store-upload-helpers.js",
+      "normal_code_mirror": "docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/ozon/store-upload-helpers.js",
+      "normal_code_reference": [
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/store-upload-context.js"
+      ],
+      "parity_status": "parity_backed",
+      "export_symbol_mapping": {
+        "expected": [
+          "appendStoreSuffix",
+          "stripStoreSuffix",
+          "injectStoreSuffixIntoSkuCode",
+          "stripStoreSuffixFromSkuCode",
+          "buildStoreSpecificDrafts",
+          "classifyStoreHelperForErp"
+        ],
+        "actual": [
+          "appendStoreSuffix",
+          "buildStoreSpecificDrafts",
+          "classifyStoreHelperForErp",
+          "injectStoreSuffixIntoSkuCode",
+          "stripStoreSuffix",
+          "stripStoreSuffixFromSkuCode"
+        ],
+        "missing": [],
+        "passed": true
+      },
+      "call_edge_mapping": {
+        "imports": [
+          "../../../../normal-code-reference/src/ozon/store-upload-context.js"
+        ],
+        "callEdges": [],
+        "linksToNormalCodeReference": true
+      },
+      "fixture_io_comparison": {
+        "description": "store contexts and mapped drafts",
+        "shared_fixture_output": {
+          "templateFields": 12,
+          "normalizedRows": 2,
+          "importPreviewCandidates": 2,
+          "complexAttributeRows": 4,
+          "importResultRows": 4,
+          "storeContexts": 2,
+          "failureCases": 7,
+          "mediaProofGaps": 5
+        },
+        "passed": true
+      },
+      "proof_gap": false
+    },
+    {
+      "original": "ui/app/services/draft-sync-service.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/app/services/draft-sync-service.js",
+      "normal_code_mirror": "docs/research/b1c-architecture-mirror/normal-code-mirror/ui/app/services/draft-sync-service.js",
+      "normal_code_reference": [
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/draft/draft-merge.js",
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/store-upload-context.js"
+      ],
+      "parity_status": "parity_backed",
+      "export_symbol_mapping": {
+        "expected": [
+          "buildSyncedProductDraftState",
+          "buildDraftCandidates",
+          "buildStoreUploadContexts"
+        ],
+        "actual": [
+          "buildDraftCandidates",
+          "buildStoreUploadContexts",
+          "buildSyncedProductDraftState"
+        ],
+        "missing": [],
+        "passed": true
+      },
+      "call_edge_mapping": {
+        "imports": [
+          "../../../../normal-code-reference/src/draft/draft-merge.js",
+          "../../../../normal-code-reference/src/ozon/store-upload-context.js"
+        ],
+        "callEdges": [],
+        "linksToNormalCodeReference": true
+      },
+      "fixture_io_comparison": {
+        "description": "draft candidate count and store context bridge",
+        "shared_fixture_output": {
+          "templateFields": 12,
+          "normalizedRows": 2,
+          "importPreviewCandidates": 2,
+          "complexAttributeRows": 4,
+          "importResultRows": 4,
+          "storeContexts": 2,
+          "failureCases": 7,
+          "mediaProofGaps": 5
+        },
+        "passed": true
+      },
+      "proof_gap": false
+    },
+    {
+      "original": "ui/modules/image-generation/prompt-plan-builder.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/image-generation/prompt-plan-builder.js",
+      "normal_code_mirror": "docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/image-generation/prompt-plan-builder.js",
+      "normal_code_reference": [
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/media/prompt-plan.js",
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/media/provider-proof-gaps.js"
+      ],
+      "parity_status": "parity_backed",
+      "export_symbol_mapping": {
+        "expected": [
+          "buildProductContext",
+          "buildPromptPlanPlannerInput",
+          "buildPromptPlanCandidate",
+          "buildMediaProviderProofGapReport"
+        ],
+        "actual": [
+          "buildMediaProviderProofGapReport",
+          "buildProductContext",
+          "buildPromptPlanCandidate",
+          "buildPromptPlanPlannerInput"
+        ],
+        "missing": [],
+        "passed": true
+      },
+      "call_edge_mapping": {
+        "imports": [
+          "../../../../normal-code-reference/src/media/prompt-plan.js",
+          "../../../../normal-code-reference/src/media/provider-proof-gaps.js"
+        ],
+        "callEdges": [],
+        "linksToNormalCodeReference": true
+      },
+      "fixture_io_comparison": {
+        "description": "prompt plan slots and proof-gap report",
+        "shared_fixture_output": {
+          "templateFields": 12,
+          "normalizedRows": 2,
+          "importPreviewCandidates": 2,
+          "complexAttributeRows": 4,
+          "importResultRows": 4,
+          "storeContexts": 2,
+          "failureCases": 7,
+          "mediaProofGaps": 5
+        },
+        "passed": true
+      },
+      "proof_gap": false
+    },
+    {
+      "original": "ui/modules/image-generation/generated-image-assets.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/image-generation/generated-image-assets.js",
+      "normal_code_mirror": "docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/image-generation/generated-image-assets.js",
+      "normal_code_reference": [
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/media/generated-assets.js"
+      ],
+      "parity_status": "parity_backed",
+      "export_symbol_mapping": {
+        "expected": [
+          "buildAiGeneratedSourceEntry",
+          "buildGeneratedImageAssetRef"
+        ],
+        "actual": [
+          "buildAiGeneratedSourceEntry",
+          "buildGeneratedImageAssetRef"
+        ],
+        "missing": [],
+        "passed": true
+      },
+      "call_edge_mapping": {
+        "imports": [
+          "../../../../normal-code-reference/src/media/generated-assets.js"
+        ],
+        "callEdges": [],
+        "linksToNormalCodeReference": true
+      },
+      "fixture_io_comparison": {
+        "description": "generated media refs from pipeline",
+        "shared_fixture_output": {
+          "templateFields": 12,
+          "normalizedRows": 2,
+          "importPreviewCandidates": 2,
+          "complexAttributeRows": 4,
+          "importResultRows": 4,
+          "storeContexts": 2,
+          "failureCases": 7,
+          "mediaProofGaps": 5
+        },
+        "passed": true
+      },
+      "proof_gap": false
+    },
+    {
+      "original": "ui/modules/image-generation/generated-image-state.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/modules/image-generation/generated-image-state.js",
+      "normal_code_mirror": "docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/image-generation/generated-image-state.js",
+      "normal_code_reference": [
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/media/provider-proof-gaps.js"
+      ],
+      "parity_status": "parity_backed",
+      "export_symbol_mapping": {
+        "expected": [
+          "GENERATED_IMAGE_PROOF_GAPS",
+          "normalizeProviderTaskProbe",
+          "buildMediaProviderProofGapReport",
+          "GENERATED_IMAGE_STATUSES"
+        ],
+        "actual": [
+          "GENERATED_IMAGE_PROOF_GAPS",
+          "GENERATED_IMAGE_STATUSES",
+          "buildMediaProviderProofGapReport",
+          "normalizeProviderTaskProbe"
+        ],
+        "missing": [],
+        "passed": true
+      },
+      "call_edge_mapping": {
+        "imports": [
+          "../../../../normal-code-reference/src/media/provider-proof-gaps.js"
+        ],
+        "callEdges": [
+          "freeze"
+        ],
+        "linksToNormalCodeReference": true
+      },
+      "fixture_io_comparison": {
+        "description": "provider task descriptors and media proof gaps",
+        "shared_fixture_output": {
+          "templateFields": 12,
+          "normalizedRows": 2,
+          "importPreviewCandidates": 2,
+          "complexAttributeRows": 4,
+          "importResultRows": 4,
+          "storeContexts": 2,
+          "failureCases": 7,
+          "mediaProofGaps": 5
+        },
+        "passed": true
+      },
+      "proof_gap": false
+    },
+    {
+      "original": "services/providers/adapters/openai-compatible-image-polling.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/services/providers/adapters/openai-compatible-image-polling.js",
+      "normal_code_mirror": "docs/research/b1c-architecture-mirror/normal-code-mirror/services/providers/adapters/openai-compatible-image-polling.js",
+      "normal_code_reference": [
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/media/provider-proof-gaps.js"
+      ],
+      "parity_status": "proof_gap",
+      "export_symbol_mapping": {
+        "expected": [
+          "normalizeProviderTaskProbe",
+          "buildMediaProviderProofGapReport",
+          "pollOpenAiCompatibleImageTask"
+        ],
+        "actual": [
+          "buildMediaProviderProofGapReport",
+          "normalizeProviderTaskProbe",
+          "pollOpenAiCompatibleImageTask"
+        ],
+        "missing": [],
+        "passed": true
+      },
+      "call_edge_mapping": {
+        "imports": [
+          "../../../../normal-code-reference/src/media/provider-proof-gaps.js"
+        ],
+        "callEdges": [
+          "normalizeProviderTaskProbe",
+          "pollOpenAiCompatibleImageTask"
+        ],
+        "linksToNormalCodeReference": true
+      },
+      "fixture_io_comparison": {
+        "description": "fixture task descriptor only; live provider polling not proven",
+        "shared_fixture_output": {
+          "templateFields": 12,
+          "normalizedRows": 2,
+          "importPreviewCandidates": 2,
+          "complexAttributeRows": 4,
+          "importResultRows": 4,
+          "storeContexts": 2,
+          "failureCases": 7,
+          "mediaProofGaps": 5
+        },
+        "passed": "proof_gap_explicit"
+      },
+      "proof_gap": true
+    },
+    {
+      "original": "services/providers/adapters/openai-compatible-image-request.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/services/providers/adapters/openai-compatible-image-request.js",
+      "normal_code_mirror": "docs/research/b1c-architecture-mirror/normal-code-mirror/services/providers/adapters/openai-compatible-image-request.js",
+      "normal_code_reference": [
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/media/provider-proof-gaps.js"
+      ],
+      "parity_status": "proof_gap",
+      "export_symbol_mapping": {
+        "expected": [
+          "buildOpenAiCompatibleImageRequestDescriptor"
+        ],
+        "actual": [
+          "buildOpenAiCompatibleImageRequestDescriptor"
+        ],
+        "missing": [],
+        "passed": true
+      },
+      "call_edge_mapping": {
+        "imports": [],
+        "callEdges": [
+          "buildOpenAiCompatibleImageRequestDescriptor"
+        ],
+        "linksToNormalCodeReference": false
+      },
+      "fixture_io_comparison": {
+        "description": "request descriptor only; live request body/headers not proven",
+        "shared_fixture_output": {
+          "templateFields": 12,
+          "normalizedRows": 2,
+          "importPreviewCandidates": 2,
+          "complexAttributeRows": 4,
+          "importResultRows": 4,
+          "storeContexts": 2,
+          "failureCases": 7,
+          "mediaProofGaps": 5
+        },
+        "passed": "proof_gap_explicit"
+      },
+      "proof_gap": true
+    },
+    {
+      "original": "ui/app/workflows/ozon-upload-workflow.js",
+      "readable": "docs/research/b1c-architecture-mirror/readable/ui/app/workflows/ozon-upload-workflow.js",
+      "normal_code_mirror": "docs/research/b1c-architecture-mirror/normal-code-mirror/ui/app/workflows/ozon-upload-workflow.js",
+      "normal_code_reference": [
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/upload-intent.js",
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/import-results.js",
+        "docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/store-upload-context.js"
+      ],
+      "parity_status": "proof_gap",
+      "export_symbol_mapping": {
+        "expected": [
+          "buildOzonUploadWorkflowPreview",
+          "mapOzonUploadWorkflowResult"
+        ],
+        "actual": [
+          "buildOzonUploadWorkflowPreview",
+          "mapOzonUploadWorkflowResult"
+        ],
+        "missing": [],
+        "passed": true
+      },
+      "call_edge_mapping": {
+        "imports": [
+          "../../../../normal-code-reference/src/ozon/import-results.js",
+          "../../../../normal-code-reference/src/ozon/store-upload-context.js",
+          "../../../../normal-code-reference/src/ozon/upload-intent.js"
+        ],
+        "callEdges": [
+          "buildOzonUploadWorkflowPreview",
+          "buildStoreUploadContexts",
+          "createUploadIntentCandidate",
+          "mapOzonUploadWorkflowResult",
+          "summarizeImportPollingResult"
+        ],
+        "linksToNormalCodeReference": true
+      },
+      "fixture_io_comparison": {
+        "description": "workflow preview/result mapping only; live UI workflow not proven",
+        "shared_fixture_output": {
+          "templateFields": 12,
+          "normalizedRows": 2,
+          "importPreviewCandidates": 2,
+          "complexAttributeRows": 4,
+          "importResultRows": 4,
+          "storeContexts": 2,
+          "failureCases": 7,
+          "mediaProofGaps": 5
+        },
+        "passed": "proof_gap_explicit"
+      },
+      "proof_gap": true
+    }
+  ]
+}

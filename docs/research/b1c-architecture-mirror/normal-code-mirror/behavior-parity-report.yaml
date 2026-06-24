@@ -1,0 +1,143 @@
+task_id: B1F_BEIXIONG_COMPLEX_ATTRIBUTES_IMPORT_POLLING_AND_MEDIA_GAPS
+generated_at: "2026-06-24"
+tooling:
+  runtime: "node"
+  ast_tooling: "lightweight ESM surface/call-edge scanner written in Node because Babel/acorn packages are unavailable in this sandbox"
+  babel_available: false
+  apk_native_binary_tools_used: false
+noExternalCalls: true
+coverage:
+  priorityFiles: 15
+  parityBackedNormalCodeMirror: 11
+  proofGapMirrorFiles: 4
+  priorityReadableOnly: 0
+  overallReadableOnly: 25
+  exportMappingFailures: 0
+  parityCallEdgeFailures: 0
+parity_backed_files:
+  - "ui/modules/ozon/category-builder.js"
+  - "ui/modules/ozon/category-ai-schema-builder.js"
+  - "ui/modules/text/schema-payload.js"
+  - "ui/modules/text/row-normalizer.js"
+  - "ui/modules/ozon/uploader-payload.js"
+  - "ui/modules/ozon/uploader.js"
+  - "ui/modules/ozon/store-upload-helpers.js"
+  - "ui/app/services/draft-sync-service.js"
+  - "ui/modules/image-generation/prompt-plan-builder.js"
+  - "ui/modules/image-generation/generated-image-assets.js"
+  - "ui/modules/image-generation/generated-image-state.js"
+proof_gap_files:
+  - "ui/modules/ozon/api.js"
+  - "services/providers/adapters/openai-compatible-image-polling.js"
+  - "services/providers/adapters/openai-compatible-image-request.js"
+  - "ui/app/workflows/ozon-upload-workflow.js"
+readable_only:
+  priority_files: []
+  overall_count: 25
+  note: "Non-priority readable focus files remain readable-only and are not claimed as normal-code parity."
+files:
+  - original: "ui/modules/ozon/category-builder.js"
+    parity_status: parity_backed
+    export_mapping_passed: true
+    missing_exports: []
+    links_to_normal_code_reference: true
+    fixture_io: "template field count and category schema build"
+    proof_gap: false
+  - original: "ui/modules/ozon/category-ai-schema-builder.js"
+    parity_status: parity_backed
+    export_mapping_passed: true
+    missing_exports: []
+    links_to_normal_code_reference: true
+    fixture_io: "attribute gap matrix field count"
+    proof_gap: false
+  - original: "ui/modules/text/schema-payload.js"
+    parity_status: parity_backed
+    export_mapping_passed: true
+    missing_exports: []
+    links_to_normal_code_reference: true
+    fixture_io: "schema payload lane keys"
+    proof_gap: false
+  - original: "ui/modules/text/row-normalizer.js"
+    parity_status: parity_backed
+    export_mapping_passed: true
+    missing_exports: []
+    links_to_normal_code_reference: true
+    fixture_io: "normalized rows and invalid select handling"
+    proof_gap: false
+  - original: "ui/modules/ozon/uploader-payload.js"
+    parity_status: parity_backed
+    export_mapping_passed: true
+    missing_exports: []
+    links_to_normal_code_reference: true
+    fixture_io: "import preview count and complex attribute rows"
+    proof_gap: false
+  - original: "ui/modules/ozon/uploader.js"
+    parity_status: parity_backed
+    export_mapping_passed: true
+    missing_exports: []
+    links_to_normal_code_reference: true
+    fixture_io: "blocked upload intent and local import result mapping"
+    proof_gap: false
+  - original: "ui/modules/ozon/api.js"
+    parity_status: proof_gap
+    export_mapping_passed: true
+    missing_exports: []
+    links_to_normal_code_reference: true
+    fixture_io: "descriptor surface only; live API behavior not proven"
+    proof_gap: true
+  - original: "ui/modules/ozon/store-upload-helpers.js"
+    parity_status: parity_backed
+    export_mapping_passed: true
+    missing_exports: []
+    links_to_normal_code_reference: true
+    fixture_io: "store contexts and mapped drafts"
+    proof_gap: false
+  - original: "ui/app/services/draft-sync-service.js"
+    parity_status: parity_backed
+    export_mapping_passed: true
+    missing_exports: []
+    links_to_normal_code_reference: true
+    fixture_io: "draft candidate count and store context bridge"
+    proof_gap: false
+  - original: "ui/modules/image-generation/prompt-plan-builder.js"
+    parity_status: parity_backed
+    export_mapping_passed: true
+    missing_exports: []
+    links_to_normal_code_reference: true
+    fixture_io: "prompt plan slots and proof-gap report"
+    proof_gap: false
+  - original: "ui/modules/image-generation/generated-image-assets.js"
+    parity_status: parity_backed
+    export_mapping_passed: true
+    missing_exports: []
+    links_to_normal_code_reference: true
+    fixture_io: "generated media refs from pipeline"
+    proof_gap: false
+  - original: "ui/modules/image-generation/generated-image-state.js"
+    parity_status: parity_backed
+    export_mapping_passed: true
+    missing_exports: []
+    links_to_normal_code_reference: true
+    fixture_io: "provider task descriptors and media proof gaps"
+    proof_gap: false
+  - original: "services/providers/adapters/openai-compatible-image-polling.js"
+    parity_status: proof_gap
+    export_mapping_passed: true
+    missing_exports: []
+    links_to_normal_code_reference: true
+    fixture_io: "fixture task descriptor only; live provider polling not proven"
+    proof_gap: true
+  - original: "services/providers/adapters/openai-compatible-image-request.js"
+    parity_status: proof_gap
+    export_mapping_passed: true
+    missing_exports: []
+    links_to_normal_code_reference: false
+    fixture_io: "request descriptor only; live request body/headers not proven"
+    proof_gap: true
+  - original: "ui/app/workflows/ozon-upload-workflow.js"
+    parity_status: proof_gap
+    export_mapping_passed: true
+    missing_exports: []
+    links_to_normal_code_reference: true
+    fixture_io: "workflow preview/result mapping only; live UI workflow not proven"
+    proof_gap: true

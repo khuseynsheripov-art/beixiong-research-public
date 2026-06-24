@@ -1,0 +1,166 @@
+task_id: B1F_BEIXIONG_COMPLEX_ATTRIBUTES_IMPORT_POLLING_AND_MEDIA_GAPS
+updated_at: "2026-06-24"
+purpose: "Path-matched normal-code mirror trace map. normal-code-reference remains the runnable composition project; normal-code-mirror is the file-by-file comparison layer."
+roots:
+  readable: docs/research/b1c-architecture-mirror/readable
+  normal_code_mirror: docs/research/b1c-architecture-mirror/normal-code-mirror
+  normal_code_reference: docs/research/b1c-architecture-mirror/normal-code-reference
+coverage:
+  readable_focus_files_total: 40
+  b1f_priority_files_counted: 15
+  b1f_priority_files_with_normal_code_mirror: 15
+  b1f_priority_files_still_only_readable: 0
+  readable_focus_files_still_only_readable_overall: 25
+  parity_backed_normal_code_mirror: 11
+  proof_gap_mirror_files: 4
+  export_mapping_failures: 0
+  parity_call_edge_failures: 0
+  b1f_priority_files_with_live_behavior_proof_gap: 4
+  no_external_calls: true
+confidence_legend:
+  behavior_verified_by_fixture: "Mirror maps to normal-code-reference modules covered by B1E/B1F smoke."
+  inferred: "Mirror preserves recovered orchestration shape but needs richer UI/live samples."
+  proof_gap: "Mirror intentionally keeps live write/provider/account behavior as descriptors only."
+files:
+  - original: ui/modules/ozon/category-builder.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/category-builder.js
+    normal_code_mirror: docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/ozon/category-builder.js
+    normal_code_reference:
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/category-template.js
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/ai/attribute-gap-matrix.js
+    confidence: behavior_verified_by_fixture
+    proof_gaps:
+      - real category edge cases
+      - brand policy
+  - original: ui/modules/ozon/category-ai-schema-builder.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/category-ai-schema-builder.js
+    normal_code_mirror: docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/ozon/category-ai-schema-builder.js
+    normal_code_reference:
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/ai/attribute-gap-matrix.js
+    confidence: behavior_verified_by_fixture
+    proof_gaps:
+      - richer real-category AI schema coverage
+  - original: ui/modules/text/schema-payload.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/text/schema-payload.js
+    normal_code_mirror: docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/text/schema-payload.js
+    normal_code_reference:
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/ai/schema-payload.js
+    confidence: behavior_verified_by_fixture
+    proof_gaps:
+      - provider token or payload limits
+  - original: ui/modules/text/row-normalizer.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/text/row-normalizer.js
+    normal_code_mirror: docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/text/row-normalizer.js
+    normal_code_reference:
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/ai/row-normalizer.js
+    confidence: behavior_verified_by_fixture
+    proof_gaps:
+      - language filtering
+      - broader numeric coercion cases
+  - original: ui/modules/ozon/uploader-payload.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/uploader-payload.js
+    normal_code_mirror: docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/ozon/uploader-payload.js
+    normal_code_reference:
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/import-preview.js
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/complex-attributes.js
+    confidence: behavior_verified_by_fixture
+    proof_gaps:
+      - real Ozon complex_attributes acceptance
+  - original: ui/modules/ozon/uploader.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/uploader.js
+    normal_code_mirror: docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/ozon/uploader.js
+    normal_code_reference:
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/upload-intent.js
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/import-results.js
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/failure-taxonomy.js
+    confidence: behavior_verified_by_fixture
+    proof_gaps:
+      - live Ozon submit
+      - live polling
+      - account permissions
+  - original: ui/modules/ozon/api.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/api.js
+    normal_code_mirror: docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/ozon/api.js
+    normal_code_reference:
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/ozon-api-contract.js
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/failure-taxonomy.js
+    confidence: proof_gap
+    proof_gaps:
+      - live API authorization
+      - rate limits
+      - account-specific response variants
+  - original: ui/modules/ozon/store-upload-helpers.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/store-upload-helpers.js
+    normal_code_mirror: docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/ozon/store-upload-helpers.js
+    normal_code_reference:
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/store-upload-context.js
+    confidence: behavior_verified_by_fixture
+    proof_gaps:
+      - real multi-store upload result mapping
+  - original: ui/app/services/draft-sync-service.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/app/services/draft-sync-service.js
+    normal_code_mirror: docs/research/b1c-architecture-mirror/normal-code-mirror/ui/app/services/draft-sync-service.js
+    normal_code_reference:
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/draft/draft-merge.js
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/store-upload-context.js
+    confidence: behavior_verified_by_fixture
+    proof_gaps:
+      - UI edit sync precedence
+      - pricing-warning variants
+  - original: ui/modules/image-generation/prompt-plan-builder.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/image-generation/prompt-plan-builder.js
+    normal_code_mirror: docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/image-generation/prompt-plan-builder.js
+    normal_code_reference:
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/media/prompt-plan.js
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/media/provider-proof-gaps.js
+    confidence: behavior_verified_by_fixture
+    proof_gaps:
+      - provider prompt acceptance
+      - image quality
+  - original: ui/modules/image-generation/generated-image-assets.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/image-generation/generated-image-assets.js
+    normal_code_mirror: docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/image-generation/generated-image-assets.js
+    normal_code_reference:
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/media/generated-assets.js
+    confidence: behavior_verified_by_fixture
+    proof_gaps:
+      - generated asset acceptance
+  - original: ui/modules/image-generation/generated-image-state.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/image-generation/generated-image-state.js
+    normal_code_mirror: docs/research/b1c-architecture-mirror/normal-code-mirror/ui/modules/image-generation/generated-image-state.js
+    normal_code_reference:
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/media/provider-proof-gaps.js
+    confidence: behavior_verified_by_fixture
+    proof_gaps:
+      - full UI state transition coverage
+  - original: services/providers/adapters/openai-compatible-image-polling.js
+    readable: docs/research/b1c-architecture-mirror/readable/services/providers/adapters/openai-compatible-image-polling.js
+    normal_code_mirror: docs/research/b1c-architecture-mirror/normal-code-mirror/services/providers/adapters/openai-compatible-image-polling.js
+    normal_code_reference:
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/media/provider-proof-gaps.js
+    confidence: proof_gap
+    proof_gaps:
+      - live provider polling
+      - auth errors
+      - quota and retry timing
+  - original: services/providers/adapters/openai-compatible-image-request.js
+    readable: docs/research/b1c-architecture-mirror/readable/services/providers/adapters/openai-compatible-image-request.js
+    normal_code_mirror: docs/research/b1c-architecture-mirror/normal-code-mirror/services/providers/adapters/openai-compatible-image-request.js
+    normal_code_reference:
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/media/provider-proof-gaps.js
+    confidence: proof_gap
+    proof_gaps:
+      - provider request body variants
+      - provider credentials and headers
+  - original: ui/app/workflows/ozon-upload-workflow.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/app/workflows/ozon-upload-workflow.js
+    normal_code_mirror: docs/research/b1c-architecture-mirror/normal-code-mirror/ui/app/workflows/ozon-upload-workflow.js
+    normal_code_reference:
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/upload-intent.js
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/import-results.js
+      - docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/store-upload-context.js
+    confidence: inferred
+    proof_gaps:
+      - live UI workflow state
+      - explicit user confirmation gate
+      - live submit/poll

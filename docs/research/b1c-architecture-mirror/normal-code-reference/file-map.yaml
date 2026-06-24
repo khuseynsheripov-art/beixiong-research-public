@@ -186,6 +186,107 @@ files:
         confidence: proof_gap
     completion_grade: proof_gap
 
+b1f_gap_extensions:
+  - original: ui/modules/ozon/uploader-payload.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/uploader-payload.js
+    normal: docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/complex-attributes.js
+    responsibility: "Model complex_id/grouped attribute rows, dictionary values, missing required grouped values, and attachment to import previews."
+    dependencies:
+      - contracts/erp-contracts.js
+      - src/utils/field-utils.js
+    function_map:
+      - original_or_readable_symbol: buildAttributesArray complex_id handling
+        normal_code_symbol: buildComplexAttributeRows
+        behavior_summary: "Builds grouped complex attribute rows for one draft."
+        evidence: "B1C complex_id finding; B1F smoke complexAttributeRows=4."
+        confidence: behavior_verified_by_fixture
+      - original_or_readable_symbol: buildImportItems complex_attributes proof gap
+        normal_code_symbol: attachComplexAttributesToImportPreviews
+        behavior_summary: "Attaches complex_attributes to preview items without live upload."
+        evidence: "B1F smoke output advancedImportPreviews."
+        confidence: behavior_verified_by_fixture
+    completion_grade: behavior_verified_by_fixture
+
+  - original: ui/modules/ozon/uploader.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/uploader.js
+    normal: docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/import-results.js
+    responsibility: "Map import polling/result rows to draft/listing status, warnings, errors, and issues."
+    dependencies:
+      - contracts/erp-contracts.js
+      - src/ozon/failure-taxonomy.js
+    function_map:
+      - original_or_readable_symbol: waitForOzonImportResult
+        normal_code_symbol: summarizeImportPollingResult
+        behavior_summary: "Summarizes imported/failed/manual-review/processing import rows."
+        evidence: "B1F smoke importResultRows=4, imported=1, failed=1, manualReview=1."
+        confidence: behavior_verified_by_fixture
+      - original_or_readable_symbol: pollImportResult aggregation
+        normal_code_symbol: mapImportResultRows
+        behavior_summary: "Maps task rows and missing expected offer ids into result issues."
+        evidence: "B1C/B1D static poll surfaces; B1F fixture rows."
+        confidence: behavior_verified_by_fixture
+    completion_grade: behavior_verified_by_fixture
+
+  - original: ui/modules/ozon/store-upload-helpers.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/store-upload-helpers.js
+    normal: docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/store-upload-context.js
+    responsibility: "Represent multi-store suffix helpers and classify ERP ownership of store config and offer/SKU namespace."
+    dependencies: []
+    function_map:
+      - original_or_readable_symbol: appendStoreSuffix / stripStoreSuffix
+        normal_code_symbol: appendStoreSuffix / stripStoreSuffix
+        behavior_summary: "Adds/removes store suffixes symmetrically."
+        evidence: "Readable mirror exports; B1F smoke storeContexts=2."
+        confidence: behavior_verified_by_fixture
+      - original_or_readable_symbol: injectStoreSuffixIntoSkuCode / buildStoreSpecificDrafts
+        normal_code_symbol: injectStoreSuffixIntoSkuCode / buildStoreUploadContexts
+        behavior_summary: "Builds per-store offer and SKU contexts for drafts."
+        evidence: "B1F smoke storeMappedDrafts=4."
+        confidence: behavior_verified_by_fixture
+      - original_or_readable_symbol: store helper behavior classification
+        normal_code_symbol: classifyStoreHelperForErp
+        behavior_summary: "Classifies borrow/translate/reject/proof_gap for ERP."
+        evidence: "B1F task focus."
+        confidence: inferred
+    completion_grade: behavior_verified_by_fixture
+
+  - original: ui/modules/ozon/api.js + ui/modules/ozon/uploader.js
+    readable: docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/api.js
+    normal: docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/failure-taxonomy.js
+    responsibility: "Normalize account/import/provider failure surfaces into PreflightIssueCandidate classes."
+    dependencies:
+      - contracts/erp-contracts.js
+    function_map:
+      - original_or_readable_symbol: describeOzonApiError / import errors / provider errors
+        normal_code_symbol: classifyFailure
+        behavior_summary: "Classifies auth, permission, schema, validation, media, duplicate SKU, timeout, manual review, provider, and unknown failures."
+        evidence: "B1F smoke failureCases=7, failureClasses=7."
+        confidence: behavior_verified_by_fixture
+      - original_or_readable_symbol: upload/import error to UI state
+        normal_code_symbol: mapFailureToPreflightIssue
+        behavior_summary: "Maps failures to PreflightIssueCandidate."
+        evidence: "B1F smoke preflightIssues=12."
+        confidence: behavior_verified_by_fixture
+    completion_grade: behavior_verified_by_fixture
+
+  - original: services/providers/adapters/openai-compatible-image-polling.js + ui/modules/image-generation/generated-image-state.js
+    readable: docs/research/b1c-architecture-mirror/readable/services/providers/adapters/openai-compatible-image-polling.js
+    normal: docs/research/b1c-architecture-mirror/normal-code-reference/src/media/provider-proof-gaps.js
+    responsibility: "Represent provider request/response/polling and generated asset acceptance proof gaps without provider calls."
+    dependencies: []
+    function_map:
+      - original_or_readable_symbol: pollOpenAiCompatibleImageTask / generated image statuses
+        normal_code_symbol: normalizeProviderTaskProbe
+        behavior_summary: "Normalizes succeeded/failed/processing provider task descriptors."
+        evidence: "B1F smoke mediaProviderTasks=3."
+        confidence: behavior_verified_by_fixture
+      - original_or_readable_symbol: generated image projection/acceptance
+        normal_code_symbol: buildMediaProviderProofGapReport
+        behavior_summary: "Reports reference selection, prompt plan, provider request, polling, and asset acceptance gaps."
+        evidence: "B1F smoke mediaProofGaps=5."
+        confidence: behavior_verified_by_fixture
+    completion_grade: behavior_verified_by_fixture
+
   - original: ui/modules/ozon/uploader.js
     readable: docs/research/b1c-architecture-mirror/readable/ui/modules/ozon/uploader.js
     normal: docs/research/b1c-architecture-mirror/normal-code-reference/src/ozon/upload-intent.js

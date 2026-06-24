@@ -5,6 +5,8 @@
   "type": "module",
   "description": "Authorized normal-code reference project for Beixiong Ozon listing-tool behavior research.",
   "scripts": {
-    "smoke": "node tests-or-smoke/fixture-smoke.mjs"
+    "smoke": "node tests-or-smoke/fixture-smoke.mjs",
+    "smoke:b1f": "node tests-or-smoke/b1f-fixture-smoke.mjs",
+    "smoke:b1f-parity": "node tests-or-smoke/b1f-mirror-parity-smoke.mjs"
   }
 }
