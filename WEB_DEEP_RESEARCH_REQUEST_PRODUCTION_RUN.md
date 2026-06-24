@@ -1,5 +1,8 @@
 # Web Deep Research Request: Beixiong Production-Run Normal Code
 
+> ERP reserved-interface context: also read `ERP_RESERVED_INTERFACE_PREVIEW_FOR_WEB.md`.
+> That file is only the final-section mapping frame. The first priority remains Beixiong production-run normal-code recovery.
+
 请用中文输出报告。
 
 这次研究的第一目标不是设计我们的 ERP 接口，而是判断北熊这份授权研究仓库里的反混淆/normal-code 产物，距离“跑回北熊原本生产阶段”还差什么。
